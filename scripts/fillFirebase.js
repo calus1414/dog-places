@@ -39,38 +39,100 @@ function initializeFirebase() {
   // Traitement de la private_key pour gérer les différents formats
   let privateKey = process.env.FIREBASE_PRIVATE_KEY;
 
+  console.log('🔍 DEBUG - Variables Firebase:');
+  console.log(`📧 Client email: ${process.env.FIREBASE_CLIENT_EMAIL}`);
+  console.log(`🆔 Project ID: ${process.env.EXPO_PUBLIC_FIREBASE_PROJECT_ID}`);
+  console.log(`🔑 Private key type: ${typeof privateKey}`);
+  console.log(`🔑 Private key length: ${privateKey ? privateKey.length : 'undefined'}`);
+  console.log(`🔑 Private key start: ${privateKey ? privateKey.substring(0, 50) + '...' : 'undefined'}`);
+
+  if (!privateKey || typeof privateKey !== 'string') {
+    throw new Error(`FIREBASE_PRIVATE_KEY n'est pas définie ou n'est pas une string. Type reçu: ${typeof privateKey}`);
+  }
+
   // Si la clé est encodée en base64 (souvent le cas dans GitHub Actions)
   if (!privateKey.includes('-----BEGIN PRIVATE KEY-----')) {
+    console.log('🔄 Tentative de décodage base64...');
     try {
-      privateKey = Buffer.from(privateKey, 'base64').toString('utf8');
+      const decoded = Buffer.from(privateKey, 'base64').toString('utf8');
+      console.log(`✅ Décodage base64 réussi. Nouvelle longueur: ${decoded.length}`);
+      privateKey = decoded;
     } catch (error) {
-      // Si ce n'est pas du base64, on garde la valeur originale
+      console.log('⚠️  Échec du décodage base64, utilisation de la valeur originale');
     }
   }
 
   // Remplacer les \n littéraux par de vrais retours à la ligne
   privateKey = privateKey.replace(/\\n/g, '\n');
 
+  console.log(`🔑 Private key finale - Type: ${typeof privateKey}, Longueur: ${privateKey.length}`);
+  console.log(`🔑 Contient BEGIN: ${privateKey.includes('-----BEGIN PRIVATE KEY-----')}`);
+  console.log(`🔑 Contient END: ${privateKey.includes('-----END PRIVATE KEY-----')}`);
+
   console.log('🔑 Initialisation Firebase avec les credentials...');
-  console.log(`📧 Client email: ${process.env.FIREBASE_CLIENT_EMAIL}`);
-  console.log(`🆔 Project ID: ${process.env.EXPO_PUBLIC_FIREBASE_PROJECT_ID}`);
 
   if (!admin.apps.length) {
-    const serviceAccount = {
-      type: "service_account",
-      project_id: process.env.EXPO_PUBLIC_FIREBASE_PROJECT_ID,
-      private_key_id: process.env.FIREBASE_PRIVATE_KEY_ID,
-      private_key: privateKey,
-      client_email: process.env.FIREBASE_CLIENT_EMAIL,
-      client_id: process.env.FIREBASE_CLIENT_ID,
-      auth_uri: "https://accounts.google.com/o/oauth2/auth",
-      token_uri: "https://oauth2.googleapis.com/token",
-      auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs",
-      client_x509_cert_url: process.env.FIREBASE_CLIENT_X509_CERT_URL
-    };
+    // Approche alternative : créer les credentials via applicationDefault() ou avec un objet JSON
+    let credential;
+
+    try {
+      // Méthode 1: Essayer avec l'objet service account
+      const serviceAccount = {
+        type: "service_account",
+        project_id: process.env.EXPO_PUBLIC_FIREBASE_PROJECT_ID,
+        private_key_id: process.env.FIREBASE_PRIVATE_KEY_ID,
+        private_key: privateKey,
+        client_email: process.env.FIREBASE_CLIENT_EMAIL,
+        client_id: process.env.FIREBASE_CLIENT_ID,
+        auth_uri: "https://accounts.google.com/o/oauth2/auth",
+        token_uri: "https://oauth2.googleapis.com/token",
+        auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs",
+        client_x509_cert_url: process.env.FIREBASE_CLIENT_X509_CERT_URL
+      };
+
+      console.log('📝 Service Account object créé:');
+      Object.keys(serviceAccount).forEach(key => {
+        if (key === 'private_key') {
+          console.log(`  ${key}: ${typeof serviceAccount[key]} (${serviceAccount[key] ? serviceAccount[key].length : 0} chars)`);
+        } else {
+          console.log(`  ${key}: ${serviceAccount[key] ? '✅' : '❌'}`);
+        }
+      });
+
+      credential = admin.credential.cert(serviceAccount);
+      console.log('✅ Credential créé avec succès');
+
+    } catch (error) {
+      console.error('❌ Erreur lors de la création du credential:', error.message);
+
+      // Méthode 2: Essayer avec les variables d'environnement directes
+      console.log('🔄 Tentative avec les variables d\'environnement directes...');
+
+      // Définir les variables pour applicationDefault()
+      process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON = JSON.stringify({
+        type: "service_account",
+        project_id: process.env.EXPO_PUBLIC_FIREBASE_PROJECT_ID,
+        private_key_id: process.env.FIREBASE_PRIVATE_KEY_ID,
+        private_key: privateKey,
+        client_email: process.env.FIREBASE_CLIENT_EMAIL,
+        client_id: process.env.FIREBASE_CLIENT_ID,
+        auth_uri: "https://accounts.google.com/o/oauth2/auth",
+        token_uri: "https://oauth2.googleapis.com/token",
+        auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs",
+        client_x509_cert_url: process.env.FIREBASE_CLIENT_X509_CERT_URL
+      });
+
+      try {
+        credential = admin.credential.applicationDefault();
+        console.log('✅ Credential applicationDefault créé');
+      } catch (error2) {
+        console.error('❌ Erreur applicationDefault aussi:', error2.message);
+        throw error; // Relancer l'erreur originale
+      }
+    }
 
     admin.initializeApp({
-      credential: admin.credential.cert(serviceAccount),
+      credential: credential,
       databaseURL: `https://${process.env.EXPO_PUBLIC_FIREBASE_PROJECT_ID}.firebaseio.com`
     });
   }
