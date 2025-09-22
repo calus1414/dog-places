@@ -1,64 +1,37 @@
-# .github/workflows/places-api-demo.yml
-name: Google Places API Demo
+# .github/workflows/fill-firebase.yml
+name: Fill Firebase with Dog Places Data
 
 on:
-  # Run every 6 hours
+  # Run once per day
   schedule:
-    - cron: '0 */6 * * *'
-  
+    - cron: '0 8 * * *'  # 8h00 UTC chaque jour
+
   # Allow manual triggering
   workflow_dispatch:
-    inputs:
-      search_type:
-        description: 'Type of business to search for'
-        required: false
-        default: 'park'
-        type: choice
-        options:
-          - park
-          - pet_store
-          - restaurant
-          - gym
-          - hospital
-      location:
-        description: 'City or coordinates (lat,lng)'
-        required: false
-        default: 'New York, NY'
-        type: string
 
 jobs:
-  fetch-places:
+  fill-firebase:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-    
+
     - name: Set up Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '18'
-    
+
     - name: Install dependencies
-      run: |
-        npm init -y
-        npm install axios
-    
-    - name: Create output directory
-      run: mkdir -p data
-    
-    - name: Fetch Places Data
+      run: npm install
+
+    - name: Fill Firebase with Places Data
       env:
         GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
-        INPUT_SEARCH_TYPE: ${{ github.event.inputs.search_type || 'park' }}
-        INPUT_LOCATION: ${{ github.event.inputs.location || 'New York, NY' }}
-      run: node fetch-places.js
-    
-    - name: Upload results as artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: places-data-${{ github.run_number }}
-        path: data/
-        retention-days: 30
+        EXPO_PUBLIC_FIREBASE_PROJECT_ID: ${{ secrets.EXPO_PUBLIC_FIREBASE_PROJECT_ID }}
+        FIREBASE_PRIVATE_KEY_ID: ${{ secrets.FIREBASE_PRIVATE_KEY_ID }}
+        FIREBASE_PRIVATE_KEY: ${{ secrets.FIREBASE_PRIVATE_KEY }}
+        FIREBASE_CLIENT_EMAIL: ${{ secrets.FIREBASE_CLIENT_EMAIL }}
+        FIREBASE_CLIENT_ID: ${{ secrets.FIREBASE_CLIENT_ID }}
+        FIREBASE_CLIENT_X509_CERT_URL: ${{ secrets.FIREBASE_CLIENT_X509_CERT_URL }}
+      run: node scripts/fillFirebase.js
