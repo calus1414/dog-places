@@ -68,6 +68,13 @@ let lastSecondTimestamp = Math.floor(Date.now() / 1000);
 // Cache pour déduplication par geohash
 const geohashCache = new Set();
 
+// Statistiques pour arrêt intelligent
+let consecutiveEmptyResults = 0;
+let recentSuccessCount = 0;
+let lastSuccessfulMunicipality = '';
+const MAX_CONSECUTIVE_EMPTY = 100; // Arrêt après 100 résultats vides consécutifs
+const MIN_SUCCESS_RATE = 5; // % minimum sur les 100 dernières requêtes
+
 // Initialiser Firebase
 function initializeFirebase() {
   if (!admin.apps.length) {
@@ -97,18 +104,16 @@ function initializeFirebase() {
   return admin.firestore();
 }
 
-// Smart Rate Limiting avec burst handling
+// Smart Rate Limiting optimisé
 async function smartRateLimit() {
   const currentSecond = Math.floor(Date.now() / 1000);
 
   if (currentSecond !== lastSecondTimestamp) {
-    // Nouvelle seconde, reset du compteur
     requestsThisSecond = 0;
     lastSecondTimestamp = currentSecond;
   }
 
   if (requestsThisSecond >= RATE_LIMIT) {
-    // Attendre la prochaine seconde
     const waitTime = 1000 - (Date.now() % 1000);
     await new Promise(resolve => setTimeout(resolve, waitTime));
     requestsThisSecond = 0;
@@ -118,10 +123,9 @@ async function smartRateLimit() {
   requestsThisSecond++;
   totalRequests++;
 
-  // Petit délai pour éviter les burst trop agressifs
-  const baseDelay = 1000 / RATE_LIMIT;
-  const jitter = Math.random() * 50; // 0-50ms de jitter
-  await new Promise(resolve => setTimeout(resolve, baseDelay + jitter));
+  // Délai minimal optimisé
+  const minDelay = 1000 / RATE_LIMIT;
+  await new Promise(resolve => setTimeout(resolve, minDelay));
 }
 
 // Vérification des quotas
@@ -157,11 +161,15 @@ async function geocodeAddress(address, retryCount = 0) {
     successfulRequests++;
 
     if (response.data.status === 'OK' && response.data.results.length > 0) {
+      consecutiveEmptyResults = 0; // Reset compteur
+      recentSuccessCount++;
       return response.data.results.map(result => transformGeocodingResult(result, address));
     } else if (response.data.status === 'ZERO_RESULTS') {
+      consecutiveEmptyResults++;
       return [];
     } else {
       console.warn(`⚠️  Geocoding warning for "${address}": ${response.data.status}`);
+      consecutiveEmptyResults++;
       return [];
     }
 
@@ -363,15 +371,37 @@ async function saveBatchToFirebase(db, addresses) {
 function displayProgress(current, total, municipality, street, number) {
   const percentage = ((current / total) * 100).toFixed(2);
   const eta = calculateETA(current, total);
-  const successRate = ((successfulRequests / totalRequests) * 100).toFixed(1);
+  const successRate = totalRequests > 0 ? ((successfulRequests / totalRequests) * 100).toFixed(1) : '0.0';
+  const addressRate = totalRequests > 0 ? ((totalAddresses / totalRequests) * 100).toFixed(1) : '0.0';
 
   process.stdout.write(
-    `\r🔄 Progress: ${percentage}% (${current}/${total}) | ` +
+    `\r🔄 ${percentage}% (${current}/${total}) | ` +
     `${municipality} - ${street} #${number} | ` +
-    `Success: ${successRate}% | ` +
+    `Success: ${successRate}% | Addr: ${addressRate}% | ` +
+    `Empty: ${consecutiveEmptyResults} | ` +
     `ETA: ${eta} | ` +
     `Quota: ${totalRequests}/${DAILY_QUOTA}`
   );
+}
+
+// Fonction pour vérifier si on doit s'arrêter
+function shouldStopEarly() {
+  // Arrêt si trop de résultats vides consécutifs
+  if (consecutiveEmptyResults >= MAX_CONSECUTIVE_EMPTY) {
+    console.log(`\n🛑 Arrêt: ${consecutiveEmptyResults} résultats vides consécutifs`);
+    return true;
+  }
+
+  // Arrêt si le taux de succès est trop faible (après au moins 500 requêtes)
+  if (totalRequests >= 500) {
+    const currentSuccessRate = (totalAddresses / totalRequests) * 100;
+    if (currentSuccessRate < MIN_SUCCESS_RATE) {
+      console.log(`\n🛑 Arrêt: Taux de réussite trop faible (${currentSuccessRate.toFixed(1)}%)`);
+      return true;
+    }
+  }
+
+  return false;
 }
 
 function calculateETA(current, total) {
@@ -418,9 +448,11 @@ async function main() {
 
     console.log('\n🚀 Starting systematic geocoding...\n');
 
-    // Stratégie systématique : Commune × Rue × Numéro
-    for (const municipality of BRUSSELS_MUNICIPALITIES) {
-      for (const street of TOP_STREET_NAMES) {
+    // Stratégie systématique optimisée : Commune × Rue × Numéro
+    municipalityLoop: for (const municipality of BRUSSELS_MUNICIPALITIES) {
+      streetLoop: for (const street of TOP_STREET_NAMES) {
+        let streetFoundAddresses = false;
+
         for (const number of COMMON_HOUSE_NUMBERS) {
           currentQuery++;
 
@@ -439,13 +471,22 @@ async function main() {
               .filter(result => result !== null)
               .filter(result => !isDuplicate(result));
 
-            allAddresses.push(...validResults);
-            totalAddresses += validResults.length;
+            if (validResults.length > 0) {
+              streetFoundAddresses = true;
+              allAddresses.push(...validResults);
+              totalAddresses += validResults.length;
+            }
 
             // Sauvegarde par batch
             if (allAddresses.length >= BATCH_SIZE) {
               await saveBatchToFirebase(db, allAddresses);
               allAddresses = []; // Clear pour le prochain batch
+            }
+
+            // Vérification d'arrêt intelligent
+            if (shouldStopEarly()) {
+              console.log('\n⏹️  Arrêt intelligent activé');
+              break municipalityLoop;
             }
 
           } catch (error) {
@@ -454,17 +495,23 @@ async function main() {
             // Si on atteint le quota, on s'arrête
             if (error.message.includes('quota')) {
               console.log('\n🚫 Daily quota reached, stopping...');
-              break;
+              break municipalityLoop;
             }
+          }
+
+          // Check quota
+          if (totalRequests >= DAILY_QUOTA) {
+            console.log('\n🚫 Daily quota limit reached');
+            break municipalityLoop;
           }
         }
 
-        // Check si on doit s'arrêter pour le quota
-        if (totalRequests >= DAILY_QUOTA) break;
+        // Si aucune adresse trouvée pour cette rue, on peut la skipper plus rapidement
+        if (!streetFoundAddresses && consecutiveEmptyResults > 10) {
+          console.log(`\n⏭️  Skipping street ${street} (no addresses found)`);
+          continue streetLoop;
+        }
       }
-
-      // Check si on doit s'arrêter pour le quota
-      if (totalRequests >= DAILY_QUOTA) break;
     }
 
     // Sauvegarde finale des adresses restantes

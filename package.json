@@ -9,6 +9,7 @@
     "fetch-addresses-safe": "node scripts/fetchAddressesOptimized.js",
     "fetch-all-addresses": "node scripts/fetchAllBrusselsAddresses.js",
     "geocode-all-addresses": "node scripts/geocodeAllBrusselsAddresses.js",
+    "geocode-fast": "node scripts/geocodeAllBrusselsAddressesFast.js",
     "test-firebase": "node scripts/testFirebase.js",
     "schedule:start": "node scripts/scheduleManager.js start",
     "schedule:execute": "node scripts/scheduleManager.js execute",
