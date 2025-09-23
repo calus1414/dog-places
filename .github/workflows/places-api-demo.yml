@@ -36,7 +36,7 @@ jobs:
         FIREBASE_CLIENT_X509_CERT_URL: ${{ secrets.FIREBASE_CLIENT_X509_CERT_URL }}
       run: node scripts/fillFirebase.js
 
-    - name: Fill Firebase with Brussels Addresses
+    - name: Fill Firebase with ALL Brussels Addresses
       env:
         GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
         EXPO_PUBLIC_FIREBASE_PROJECT_ID: ${{ secrets.EXPO_PUBLIC_FIREBASE_PROJECT_ID }}
@@ -45,4 +45,4 @@ jobs:
         FIREBASE_CLIENT_EMAIL: ${{ secrets.FIREBASE_CLIENT_EMAIL }}
         FIREBASE_CLIENT_ID: ${{ secrets.FIREBASE_CLIENT_ID }}
         FIREBASE_CLIENT_X509_CERT_URL: ${{ secrets.FIREBASE_CLIENT_X509_CERT_URL }}
-      run: node scripts/fetchAddressesOptimized.js
+      run: node scripts/fetchAllBrusselsAddresses.js

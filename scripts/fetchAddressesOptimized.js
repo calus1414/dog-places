@@ -286,49 +286,54 @@ async function main() {
     // Phase 1: Recherche limitée mais garantie
     console.log('\\n📍 Phase 1: Recherche de base...');
 
-    // Juste les 3 principales communes avec 1 terme de recherche
-    const priorityCities = ['Bruxelles', 'Ixelles', 'Schaerbeek'];
-    const mainSearchTerm = 'avenue';
+    // Toutes les communes avec plusieurs termes de recherche
+    const priorityCities = PRIORITY_MUNICIPALITIES; // Toutes les 19 communes
+    const searchTerms = ['avenue', 'rue', 'boulevard', 'place']; // 4 termes principaux
 
     for (const municipality of priorityCities) {
-      try {
-        console.log(`🔍 Recherche: ${municipality} - ${mainSearchTerm}`);
-        const results = await searchStreetsByMunicipality(municipality, mainSearchTerm);
+      for (const searchTerm of searchTerms) {
+        try {
+          console.log(`🔍 Recherche: ${municipality} - ${searchTerm}`);
+          const results = await searchStreetsByMunicipality(municipality, searchTerm);
 
-        if (results && results.length > 0) {
-          results.forEach(result => {
-            if (result.geometry && result.geometry.location) {
-              const location = result.geometry.location;
-              allAddresses.push({
-                place_id: result.place_id,
-                name: result.name,
-                formatted_address: result.formatted_address,
-                municipality: municipality,
-                search_term: mainSearchTerm,
-                location: {
-                  latitude: location.lat,
-                  longitude: location.lng
-                },
-                types: result.types || []
-              });
-            }
-          });
-          console.log(`  ✅ ${municipality}: ${results.length} résultats`);
-        } else {
-          console.log(`  ⚠️  ${municipality}: aucun résultat`);
+          if (results && results.length > 0) {
+            results.forEach(result => {
+              if (result.geometry && result.geometry.location) {
+                const location = result.geometry.location;
+                allAddresses.push({
+                  place_id: result.place_id,
+                  name: result.name,
+                  formatted_address: result.formatted_address,
+                  municipality: municipality,
+                  search_term: searchTerm,
+                  location: {
+                    latitude: location.lat,
+                    longitude: location.lng
+                  },
+                  types: result.types || []
+                });
+              }
+            });
+            console.log(`  ✅ ${municipality} ${searchTerm}: ${results.length} résultats`);
+          } else {
+            console.log(`  ⚠️  ${municipality} ${searchTerm}: aucun résultat`);
+          }
+
+          quotaManager.logStatus();
+        } catch (error) {
+          console.error(`❌ Erreur ${municipality} ${searchTerm}:`, error.message);
         }
-
-        quotaManager.logStatus();
-      } catch (error) {
-        console.error(`❌ Erreur ${municipality}:`, error.message);
       }
     }
 
-    // Phase 2: Quelques codes postaux principaux
-    console.log('\\n📮 Phase 2: Codes postaux principaux...');
-    const mainPostalCodes = [1000, 1050, 1180]; // Centre, Ixelles, Uccle
+    // Phase 2: Tous les codes postaux de Bruxelles
+    console.log('\\n📮 Phase 2: Tous les codes postaux de Bruxelles...');
+    const allPostalCodes = [];
+    for (let i = 1000; i <= 1210; i++) {
+      allPostalCodes.push(i);
+    }
 
-    for (const code of mainPostalCodes) {
+    for (const code of allPostalCodes) {
       await quotaManager.waitIfNeeded();
 
       try {

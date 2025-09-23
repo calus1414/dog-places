@@ -7,6 +7,7 @@
     "fill-firebase": "node scripts/fillFirebase.js",
     "fetch-addresses": "node scripts/fetchBrusselsAddresses.js",
     "fetch-addresses-safe": "node scripts/fetchAddressesOptimized.js",
+    "fetch-all-addresses": "node scripts/fetchAllBrusselsAddresses.js",
     "test-firebase": "node scripts/testFirebase.js"
   },
   "dependencies": {
