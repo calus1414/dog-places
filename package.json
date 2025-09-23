@@ -8,7 +8,11 @@
     "fetch-addresses": "node scripts/fetchBrusselsAddresses.js",
     "fetch-addresses-safe": "node scripts/fetchAddressesOptimized.js",
     "fetch-all-addresses": "node scripts/fetchAllBrusselsAddresses.js",
-    "test-firebase": "node scripts/testFirebase.js"
+    "test-firebase": "node scripts/testFirebase.js",
+    "schedule:start": "node scripts/scheduleManager.js start",
+    "schedule:execute": "node scripts/scheduleManager.js execute",
+    "schedule:status": "node scripts/scheduleManager.js status",
+    "schedule:legacy": "node scripts/scheduleManager.js legacy"
   },
   "dependencies": {
     "firebase-admin": "^12.0.0",
