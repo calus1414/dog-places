@@ -139,29 +139,82 @@ function initializeFirebase() {
   return admin.firestore();
 }
 
-// Rechercher des lieux avec Google Places API
+// Rechercher des lieux avec Google Places API (AVEC PROTECTION BOUCLE INFINIE)
 async function searchPlaces(type, keyword) {
   try {
     console.log(`Recherche de ${keyword} à Bruxelles...`);
 
-    const response = await axios.get(`${BASE_URL}/nearbysearch/json`, {
-      params: {
+    let allResults = [];
+    let nextPageToken = null;
+    let pageCount = 0;
+    const MAX_PAGES = 5; // LIMITE STRICTE
+    const GLOBAL_TIMEOUT = 5 * 60 * 1000; // 5 minutes MAX
+    const startTime = Date.now();
+
+    do {
+      // VÉRIFICATIONS DE SÉCURITÉ
+      pageCount++;
+      if (pageCount > MAX_PAGES) {
+        console.warn(`⚠️ ARRÊT: Limite de ${MAX_PAGES} pages atteinte pour ${keyword}`);
+        break;
+      }
+
+      if ((Date.now() - startTime) > GLOBAL_TIMEOUT) {
+        console.error(`🕐 ARRÊT: Timeout global atteint pour ${keyword} (${GLOBAL_TIMEOUT}ms)`);
+        break;
+      }
+
+      const params = {
         location: `${BRUSSELS_COORDINATES.lat},${BRUSSELS_COORDINATES.lng}`,
         radius: SEARCH_RADIUS,
         type: type,
         keyword: keyword,
         key: GOOGLE_PLACES_API_KEY
+      };
+
+      // Ajouter pagetoken seulement si on en a un
+      if (nextPageToken) {
+        params.pagetoken = nextPageToken;
+        // Délai obligatoire pour pagetoken
+        await new Promise(resolve => setTimeout(resolve, 2000));
       }
-    });
 
-    if (response.data.status !== 'OK') {
-      console.error(`Erreur API Places: ${response.data.status}`);
-      return [];
-    }
+      console.log(`📄 Page ${pageCount}/${MAX_PAGES} pour ${keyword}`);
 
-    return response.data.results || [];
+      const response = await axios.get(`${BASE_URL}/nearbysearch/json`, {
+        params,
+        timeout: 10000 // 10s timeout par requête
+      });
+
+      if (response.data.status !== 'OK') {
+        console.error(`❌ Erreur API Places page ${pageCount}: ${response.data.status}`);
+        break;
+      }
+
+      const results = response.data.results || [];
+      allResults = allResults.concat(results);
+      nextPageToken = response.data.next_page_token;
+
+      console.log(`✅ Page ${pageCount}: ${results.length} résultats (total: ${allResults.length})`);
+
+      // ARRÊT si pas de nextPageToken ou si on a assez de résultats
+      if (!nextPageToken || allResults.length >= 60) {
+        console.log(`🏁 Arrêt recherche ${keyword}: ${nextPageToken ? 'limite résultats' : 'pas de page suivante'}`);
+        break;
+      }
+
+    } while (
+      nextPageToken &&
+      allResults.length < 60 &&
+      pageCount < MAX_PAGES &&
+      (Date.now() - startTime) < GLOBAL_TIMEOUT
+    );
+
+    console.log(`🎯 Total ${keyword}: ${allResults.length} résultats en ${pageCount} pages`);
+    return allResults;
+
   } catch (error) {
-    console.error(`Erreur lors de la recherche de ${keyword}:`, error.message);
+    console.error(`💥 Erreur fatale lors de la recherche de ${keyword}:`, error.message);
     return [];
   }
 }
@@ -230,9 +283,19 @@ async function savePlacesToFirestore(db, places) {
   }
 }
 
-// Fonction principale
+// Fonction principale AVEC TIMEOUT GLOBAL
 async function main() {
   console.log('🚀 Démarrage du script de remplissage Firebase...');
+
+  // TIMEOUT GLOBAL STRICT - 15 MINUTES MAX
+  const SCRIPT_TIMEOUT = 15 * 60 * 1000; // 15 minutes
+  const scriptStartTime = Date.now();
+
+  // Setup timeout global qui force l'arrêt
+  const globalTimeout = setTimeout(() => {
+    console.error('🚨 ARRÊT FORCÉ: Timeout global de 15 minutes atteint !');
+    process.exit(1);
+  }, SCRIPT_TIMEOUT);
 
   // Vérifier les variables d'environnement
   if (!GOOGLE_PLACES_API_KEY) {
@@ -254,6 +317,12 @@ async function main() {
 
     // Pour chaque type de lieu
     for (const placeType of PLACE_TYPES) {
+      // VÉRIFICATION TIMEOUT À CHAQUE ÉTAPE
+      if ((Date.now() - scriptStartTime) > (SCRIPT_TIMEOUT - 60000)) { // Arrêt 1 min avant timeout
+        console.warn('⏰ Approche du timeout global, arrêt préventif');
+        break;
+      }
+
       console.log(`\n📍 Recherche: ${placeType.name}`);
 
       // Rechercher les lieux
@@ -265,15 +334,21 @@ async function main() {
       // Obtenir les détails et transformer les données
       const transformedPlaces = [];
 
-      for (const place of places.slice(0, 20)) { // Limiter à 20 par catégorie
+      for (const place of places.slice(0, 15)) { // RÉDUIT à 15 par catégorie pour plus de rapidité
+        // VÉRIFICATION TIMEOUT DANS LA BOUCLE
+        if ((Date.now() - scriptStartTime) > (SCRIPT_TIMEOUT - 120000)) { // Arrêt 2 min avant timeout
+          console.warn('⏰ Timeout imminent, arrêt de la collecte de détails');
+          break;
+        }
+
         console.log(`  📝 Traitement: ${place.name}`);
 
         const details = await getPlaceDetails(place.place_id);
         const transformedPlace = transformPlaceData(place, details, placeType.type);
         transformedPlaces.push(transformedPlace);
 
-        // Rate limiting
-        await new Promise(resolve => setTimeout(resolve, 100));
+        // Rate limiting réduit
+        await new Promise(resolve => setTimeout(resolve, 50)); // Réduit de 100ms à 50ms
       }
 
       // Sauvegarder par batch
@@ -282,8 +357,8 @@ async function main() {
         totalPlaces += transformedPlaces.length;
       }
 
-      // Pause entre les catégories
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Pause réduite entre les catégories
+      await new Promise(resolve => setTimeout(resolve, 500)); // Réduit de 1000ms à 500ms
     }
 
     console.log(`\n🎉 Script terminé! ${totalPlaces} lieux ajoutés à Firebase`);
@@ -297,9 +372,17 @@ async function main() {
       console.log(`  ${placeType.name}: ${snapshot.size} lieux`);
     }
 
+    // NETTOYER LE TIMEOUT À LA FIN
+    clearTimeout(globalTimeout);
+    const executionTime = Math.round((Date.now() - scriptStartTime) / 1000);
+    console.log(`⏱️  Temps d'exécution total: ${executionTime}s`);
+
   } catch (error) {
     console.error('❌ Erreur:', error);
+    clearTimeout(globalTimeout); // Nettoyer le timeout même en cas d'erreur
     process.exit(1);
+  } finally {
+    clearTimeout(globalTimeout); // Sécurité supplémentaire
   }
 }
 
