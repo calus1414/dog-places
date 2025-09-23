@@ -4,7 +4,10 @@
   "description": "Script pour remplir Firebase avec des données de lieux pour chiens à Bruxelles",
   "main": "scripts/fillFirebase.js",
   "scripts": {
-    "fill-firebase": "node scripts/fillFirebase.js"
+    "fill-firebase": "node scripts/fillFirebase.js",
+    "fetch-addresses": "node scripts/fetchBrusselsAddresses.js",
+    "fetch-addresses-safe": "node scripts/fetchAddressesOptimized.js",
+    "test-firebase": "node scripts/testFirebase.js"
   },
   "dependencies": {
     "firebase-admin": "^12.0.0",
