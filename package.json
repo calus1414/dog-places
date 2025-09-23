@@ -14,14 +14,26 @@
     "schedule:start": "node scripts/scheduleManager.js start",
     "schedule:execute": "node scripts/scheduleManager.js execute",
     "schedule:status": "node scripts/scheduleManager.js status",
-    "schedule:legacy": "node scripts/scheduleManager.js legacy"
+    "schedule:legacy": "node scripts/scheduleManager.js legacy",
+    "import-addresses": "tsx scripts/importAllBrusselsAddresses.ts",
+    "import-addresses:dry": "tsx scripts/importAllBrusselsAddresses.ts --dry-run",
+    "validate-addresses": "tsx scripts/validateAddresses.ts",
+    "validate-addresses:cleanup": "tsx scripts/validateAddresses.ts --cleanup",
+    "addresses:help": "echo 'Scripts disponibles:\n  import-addresses - Import massif des adresses URBIS\n  import-addresses:dry - Test import sans sauvegarde\n  validate-addresses - Validation qualité des données\n  validate-addresses:cleanup - Validation + nettoyage automatique'"
   },
   "dependencies": {
-    "firebase-admin": "^12.0.0",
     "axios": "^1.6.0",
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "firebase-admin": "^12.0.0",
+    "tsx": "^4.20.5",
+    "zod": "^4.1.11"
   },
-  "keywords": ["firebase", "google-places", "dogs", "brussels"],
+  "keywords": [
+    "firebase",
+    "google-places",
+    "dogs",
+    "brussels"
+  ],
   "author": "",
   "license": "ISC"
 }

@@ -6,7 +6,9 @@
       "Bash(pkill:*)",
       "Bash(timeout:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run addresses:*)"
     ],
     "deny": [],
     "ask": []
