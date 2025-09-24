@@ -1,6 +1,7 @@
 // scripts/scheduleManager.js
-// Pont entre les scripts existants et la nouvelle architecture TypeScript
+// Pont entre les scripts existants et la nouvelle architecture
 
+require('dotenv').config();
 const { pathToFileURL } = require('url');
 const path = require('path');
 
@@ -33,10 +34,10 @@ class ScheduleManagerBridge {
       console.log('✅ Scheduling system initialized');
     } catch (error) {
       console.error('❌ Failed to initialize scheduling system:', error);
-      console.log('🔄 Falling back to legacy scripts...');
+      console.log('🔄 Using new architecture instead of TypeScript scheduler...');
 
-      // Fallback vers les scripts existants
-      await this.runLegacyScripts();
+      // Utiliser la nouvelle architecture refactorisée
+      await this.runNewArchitecture();
     }
   }
 
@@ -79,13 +80,77 @@ class ScheduleManagerBridge {
   }
 
   /**
-   * Fallback vers les scripts existants
+   * Utilise la nouvelle architecture refactorisée
+   */
+  async runNewArchitecture() {
+    console.log('🚀 Running new architecture scripts...');
+
+    try {
+      // 1. Import des adresses (GRATUIT)
+      console.log('🏠 Starting addresses workflow (FREE)...');
+      await this.runNewScript('addresses');
+
+      await new Promise(resolve => setTimeout(resolve, 3000)); // Pause entre workflows
+
+      // 2. Import des places (PAYANT - seulement si API key disponible)
+      if (process.env.GOOGLE_PLACES_API_KEY) {
+        console.log('🐕 Starting places workflow (PAID)...');
+        await this.runNewScript('places');
+      } else {
+        console.log('⚠️ Google Places API key not found, skipping places import');
+        console.log('💡 Add GOOGLE_PLACES_API_KEY to .env for places import');
+      }
+
+      console.log('✅ New architecture workflow completed');
+
+    } catch (error) {
+      console.error('❌ New architecture failed, falling back to legacy...', error);
+      await this.runLegacyScripts();
+    }
+  }
+
+  /**
+   * Exécute un workflow de la nouvelle architecture
+   */
+  async runNewScript(type) {
+    const { spawn } = require('child_process');
+
+    console.log(`🔄 Running ${type} workflow...`);
+
+    return new Promise((resolve, reject) => {
+      const npmScript = type === 'addresses' ? 'import:addresses' : 'import:places';
+
+      const process = spawn('npm', ['run', npmScript], {
+        stdio: 'inherit',
+        shell: true,
+        cwd: path.resolve(__dirname, '..')  // Root du projet
+      });
+
+      process.on('close', (code) => {
+        if (code === 0) {
+          console.log(`✅ ${type} workflow completed successfully`);
+          resolve();
+        } else {
+          console.error(`❌ ${type} workflow failed with code ${code}`);
+          reject(new Error(`${type} workflow failed`));
+        }
+      });
+
+      process.on('error', (error) => {
+        console.error(`❌ ${type} workflow error:`, error);
+        reject(error);
+      });
+    });
+  }
+
+  /**
+   * Fallback vers les scripts legacy
    */
   async runLegacyScripts() {
     console.log('🔄 Running legacy scripts...');
 
     try {
-      // Exécute les scripts existants dans l'ordre
+      // Exécute les scripts legacy dans l'ordre
       await this.runLegacyScript('dogPlaces');
       await new Promise(resolve => setTimeout(resolve, 5000)); // Pause entre scripts
       await this.runLegacyScript('addresses');
@@ -100,8 +165,8 @@ class ScheduleManagerBridge {
    */
   async runLegacyScript(type) {
     const scripts = {
-      dogPlaces: 'fillFirebase.js',
-      addresses: 'fetchAllBrusselsAddresses.js'
+      dogPlaces: 'legacy/fillFirebase.js',
+      addresses: 'legacy/fetchAllBrusselsAddresses.js'
     };
 
     const scriptName = scripts[type];

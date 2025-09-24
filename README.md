@@ -336,4 +336,38 @@ npm run addresses:help
 
 ---
 
+## 🔧 Solution au Problème de Workflow
+
+### ❌ **Problème Identifié**
+Votre workflow utilisait encore l'ancienne API Google Geocoding coûteuse et lente.
+
+### ✅ **Solution Implémentée**
+Architecture complètement refactorisée avec séparation claire :
+
+```bash
+# 🎛️ MENU INTERACTIF (Recommandé)
+npm start                    # Menu principal avec choix
+
+# 🏠 ADDRESSES - 100% GRATUIT (0€)
+npm run import:addresses     # OpenAddresses.io + OSM
+
+# 🐕 PLACES - PAYANT (Google API)
+npm run import:places        # Google Places uniquement
+
+# 📚 ANCIENS SCRIPTS (Legacy)
+npm run legacy:*             # Anciens scripts obsolètes
+```
+
+### 🚀 **Le Workflow Automatique**
+Le `scheduleManager.js` utilise maintenant automatiquement la nouvelle architecture :
+1. **Addresses** (gratuit) → OpenAddresses.io + OSM
+2. **Places** (payant) → Google Places API (si clé disponible)
+
+### 🎯 **Plus de Confusion Google API**
+- ✅ **Addresses** : OpenAddresses.io (gratuit)
+- ✅ **Places** : Google Places API (payant, séparé)
+- ❌ **Aucun geocoding Google** pour les adresses
+
+---
+
 **🎯 Résultat : Système d'adresses 100x plus rapide, gratuit et plus complet !**
