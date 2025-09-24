@@ -1,0 +1,7 @@
+# Fichiers de données temporaires
+*.json
+*.csv
+*.txt
+
+# Garder le dossier mais pas les fichiers
+!.gitignore
