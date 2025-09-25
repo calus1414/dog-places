@@ -1,6 +1,7 @@
 const admin = require('firebase-admin');
 const fs = require('fs');
 const path = require('path');
+const { initializeFirebase } = require('../common/firebaseInit');
 require('dotenv').config();
 
 /**
@@ -442,6 +443,7 @@ class PlaceImporter {
     }
 }
 
+
 /**
  * 🎯 FONCTION PRINCIPALE
  */
@@ -450,9 +452,12 @@ async function main() {
     console.log('===============================');
     console.log('📅', new Date().toLocaleString('fr-BE'));
 
-    // Initialisation Firebase
-    if (!admin.apps.length) {
-        admin.initializeApp();
+    // Initialisation Firebase avec configuration explicite
+    try {
+        initializeFirebase();
+    } catch (error) {
+        console.error('❌ Erreur initialisation Firebase:', error.message);
+        process.exit(1);
     }
 
     const importer = new PlaceImporter();

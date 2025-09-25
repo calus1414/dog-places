@@ -1,4 +1,5 @@
 const admin = require('firebase-admin');
+const { initializeFirebase } = require('../common/firebaseInit');
 require('dotenv').config();
 
 /**
@@ -52,10 +53,16 @@ class PlaceValidator {
             maxLng: 4.6
         };
 
-        // Types de lieux valides
+        // Types de lieux valides (nouveaux types du script enhanced)
         this.VALID_PLACE_TYPES = [
+            // Nouveaux types du script enhanced
+            'dog_park',           // Parc canin dédié
+            'general_park',       // Parc public (chiens acceptés)
+            'veterinary',         // Vétérinaire
+            'dog_friendly_restaurant', // Restaurant dog-friendly
+
+            // Anciens types (rétrocompatibilité)
             'dog_parks',
-            'veterinary',
             'pet_stores',
             'dog_friendly_cafes',
             'unknown'
@@ -232,8 +239,14 @@ class PlaceValidator {
         // Vérification cohérence type/catégorie
         if (data.type && data.category) {
             const expectedCategories = {
+                // Nouveaux types
+                'dog_park': ['Parc canin', 'parc'],
+                'general_park': ['Parc public', 'parc'],
+                'veterinary': ['Vétérinaire', 'veterinaire'],
+                'dog_friendly_restaurant': ['Restaurant dog-friendly', 'restaurant', 'cafe'],
+
+                // Anciens types (rétrocompatibilité)
                 'dog_parks': ['Parcs à chiens', 'parc'],
-                'veterinary': ['Vétérinaires', 'veterinaire'],
                 'pet_stores': ['Animaleries', 'animalerie'],
                 'dog_friendly_cafes': ['Cafés dog-friendly', 'restaurant', 'cafe']
             };
@@ -541,9 +554,12 @@ class PlaceValidator {
 async function main() {
     console.log('🔍 VALIDATION DES LIEUX POUR CHIENS');
 
-    // Initialisation Firebase
-    if (!admin.apps.length) {
-        admin.initializeApp();
+    // Initialisation Firebase avec configuration explicite
+    try {
+        initializeFirebase();
+    } catch (error) {
+        console.error('❌ Erreur initialisation Firebase:', error.message);
+        process.exit(1);
     }
 
     const validator = new PlaceValidator();
