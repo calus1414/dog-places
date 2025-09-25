@@ -1,13 +1,26 @@
-# .github/workflows/fill-firebase.yml
-name: Fill Firebase with Dog Places Data
+# .github/workflows/places-api-demo.yml
+name: 🎛️ Manual Data Collection - Dog Places Brussels
 
 on:
-  # Run once per day
-  schedule:
-    - cron: '0 8 * * *'  # 8h00 UTC chaque jour
-
-  # Allow manual triggering
+  # UNIQUEMENT MANUEL - pas d'exécution automatique
   workflow_dispatch:
+    description: 'Lancement manuel du workflow de collecte de données'
+    inputs:
+      workflow_type:
+        description: 'Type de workflow à exécuter'
+        required: true
+        default: 'both'
+        type: choice
+        options:
+        - 'addresses'     # Gratuit (OpenAddresses)
+        - 'places'        # Payant (Google API)
+        - 'both'          # Les deux séquentiellement
+        - 'legacy'        # Anciens scripts
+      dry_run:
+        description: 'Mode test (pas de sauvegarde réelle)'
+        required: false
+        default: false
+        type: boolean
 
 jobs:
   fill-firebase:
@@ -25,7 +38,7 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Execute Data Collection via Smart Scheduler
+    - name: Execute Data Collection (Manual Choice)
       env:
         NODE_ENV: production
         GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
@@ -35,15 +48,46 @@ jobs:
         FIREBASE_CLIENT_EMAIL: ${{ secrets.FIREBASE_CLIENT_EMAIL }}
         FIREBASE_CLIENT_ID: ${{ secrets.FIREBASE_CLIENT_ID }}
         FIREBASE_CLIENT_X509_CERT_URL: ${{ secrets.FIREBASE_CLIENT_X509_CERT_URL }}
-        ENABLE_GOOGLE: true
-        ENABLE_OSM: true
-        ENABLE_FALLBACK: true
-        ENABLE_VALIDATION: true
-        GOOGLE_DAILY_QUOTA: 2000
-        LOG_LEVEL: info
-        NOTIFY_ON_FAILURE: true
+        WORKFLOW_TYPE: ${{ github.event.inputs.workflow_type }}
+        DRY_RUN: ${{ github.event.inputs.dry_run }}
       run: |
-        echo "🚀 Starting intelligent data collection..."
-        node scripts/scheduleManager.js execute dogPlaces
-        sleep 30
-        node scripts/scheduleManager.js execute addresses
+        echo "🎯 LANCEMENT MANUEL DU WORKFLOW"
+        echo "Type sélectionné: $WORKFLOW_TYPE"
+        echo "Mode test: $DRY_RUN"
+
+        case "$WORKFLOW_TYPE" in
+          "addresses")
+            echo "🏠 Lancement workflow ADDRESSES (Gratuit)"
+            npm run import:addresses
+            ;;
+          "places")
+            echo "🐕 Lancement workflow PLACES (Payant Google API)"
+            if [ -z "$GOOGLE_PLACES_API_KEY" ]; then
+              echo "❌ GOOGLE_PLACES_API_KEY manquante pour le workflow places"
+              exit 1
+            fi
+            npm run import:places
+            ;;
+          "both")
+            echo "🚀 Lancement workflow COMPLET (Addresses + Places)"
+            echo "1/2 🏠 Addresses (Gratuit)..."
+            npm run import:addresses
+            sleep 30
+            echo "2/2 🐕 Places (Payant)..."
+            if [ -n "$GOOGLE_PLACES_API_KEY" ]; then
+              npm run import:places
+            else
+              echo "⚠️ GOOGLE_PLACES_API_KEY manquante, ignorer places"
+            fi
+            ;;
+          "legacy")
+            echo "📚 Lancement scripts LEGACY (compatibilité)"
+            node scripts/scheduleManager.js execute
+            ;;
+          *)
+            echo "❌ Type de workflow invalide: $WORKFLOW_TYPE"
+            exit 1
+            ;;
+        esac
+
+        echo "✅ Workflow terminé!"
