@@ -33,8 +33,13 @@ class PlaceImporter {
     /**
      * 🔍 Chargement du fichier de lieux
      */
-    loadPlacesFile(filename = 'brussels_places.json') {
-        const filePath = path.join(__dirname, '..', 'data', filename);
+    loadPlacesFile(filename = null) {
+        // Auto-détection du fichier le plus récent si non spécifié
+        if (!filename) {
+            filename = this.findMostRecentPlacesFile();
+        }
+
+        const filePath = path.join(__dirname, '../../data', filename);
 
         if (!fs.existsSync(filePath)) {
             throw new Error(`Fichier non trouvé: ${filePath}`);
@@ -44,24 +49,69 @@ class PlaceImporter {
 
         const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
-        if (!data.places || !Array.isArray(data.places)) {
+        // Support pour l'ancien et le nouveau format
+        let places;
+        if (data.places && Array.isArray(data.places)) {
+            places = data.places;
+        } else if (Array.isArray(data)) {
+            // Format tableau direct
+            places = data;
+        } else {
             throw new Error('Format de fichier invalide - lieux manquants');
         }
 
-        console.log(`✅ ${data.places.length} lieux chargés`);
-        console.log(`📊 Source: ${data.metadata?.source || 'Inconnue'}`);
-        console.log(`📅 Récupérés le: ${data.metadata?.fetchedAt || 'Inconnu'}`);
-        console.log(`💰 Coût API estimé: ${data.metadata?.apiCostEstimate || 'Inconnu'}`);
+        console.log(`✅ ${places.length} lieux chargés`);
+        console.log(`📊 Source: ${data.source || data.metadata?.source || 'Inconnue'}`);
+        console.log(`📅 Récupérés le: ${data.timestamp || data.metadata?.fetchedAt || 'Inconnu'}`);
+        console.log(`💰 Coût API estimé: ${data.metadata?.apiCostEstimate || 'Variable'}`);
 
-        // Afficher les catégories
-        if (data.metadata?.categories) {
+        // Afficher les types de lieux (nouveau format)
+        if (data.placesByType) {
+            console.log('\n🏷️ TYPES DE LIEUX TROUVÉS:');
+            Object.entries(data.placesByType).forEach(([type, count]) => {
+                console.log(`   ${type}: ${count} lieux`);
+            });
+        }
+        // Support ancien format
+        else if (data.metadata?.categories) {
             console.log('\n🏷️ CATÉGORIES TROUVÉES:');
             data.metadata.categories.forEach(cat => {
                 console.log(`   ${cat.displayName}: ${cat.count} lieux`);
             });
         }
 
-        return data.places;
+        return places;
+    }
+
+    /**
+     * 🔍 Auto-détection du fichier le plus récent
+     */
+    findMostRecentPlacesFile() {
+        const dataDir = path.join(__dirname, '../../data');
+
+        if (!fs.existsSync(dataDir)) {
+            throw new Error('Dossier data/ non trouvé');
+        }
+
+        const placeFiles = fs.readdirSync(dataDir)
+            .filter(file => file.includes('places') && file.endsWith('.json'))
+            .map(file => {
+                const filePath = path.join(dataDir, file);
+                const stats = fs.statSync(filePath);
+                return {
+                    name: file,
+                    path: filePath,
+                    mtime: stats.mtime
+                };
+            })
+            .sort((a, b) => b.mtime - a.mtime);
+
+        if (placeFiles.length === 0) {
+            throw new Error('Aucun fichier de lieux trouvé dans data/');
+        }
+
+        console.log(`🔍 Fichier le plus récent détecté: ${placeFiles[0].name}`);
+        return placeFiles[0].name;
     }
 
     /**
@@ -69,56 +119,84 @@ class PlaceImporter {
      */
     preparePlaceForFirestore(place) {
         // Validation des données obligatoires
-        if (!place.id || !place.name || !place.location) {
+        if (!place.place_id || !place.name || !place.geometry?.location) {
             throw new Error(`Données obligatoires manquantes: ${place.name || 'Lieu sans nom'}`);
         }
 
         // Génération de l'adresse de recherche
         const searchAddress = this.generateSearchAddress(place);
 
+        // Support pour les coordonnées dans différents formats
+        const location = place.geometry?.location || place.location || {};
+        const latitude = parseFloat(location.lat || location.latitude);
+        const longitude = parseFloat(location.lng || location.longitude);
+
         return {
-            id: place.id, // Google Place ID
+            id: place.place_id, // Google Place ID
             data: {
                 // Identifiants
-                place_id: place.id,
+                place_id: place.place_id,
                 name: place.name.trim(),
-                type: place.type || 'unknown',
-                category: place.category || 'Lieu pour chiens',
+                type: place.dogPlaceType || place.type || 'unknown',
+                category: this.getCategoryFromType(place.dogPlaceType || place.type),
 
                 // Géolocalisation
                 location: {
-                    latitude: parseFloat(place.location.latitude),
-                    longitude: parseFloat(place.location.longitude)
+                    latitude: latitude,
+                    longitude: longitude
                 },
 
                 // Adresse
-                address: place.address || '',
+                address: place.formatted_address || place.address || '',
                 searchAddress,
 
                 // Contact
-                phone: place.phone || null,
+                phone: place.formatted_phone_number || place.phone || null,
                 website: place.website || null,
 
                 // Évaluations
                 rating: place.rating || null,
-                ratingsCount: place.ratingsCount || 0,
+                ratingsCount: place.user_ratings_total || place.ratingsCount || 0,
 
                 // Informations pratiques
-                openingHours: place.openingHours || [],
-                priceLevel: place.priceLevel || null,
+                openingHours: place.opening_hours?.weekday_text || place.openingHours || [],
+                priceLevel: place.price_level || place.priceLevel || null,
 
                 // Médias
                 photos: place.photos || [],
 
-                // Métadonnées
-                source: place.source || 'Google Places API',
+                // Métadonnées spécifiques aux lieux pour chiens
+                dogPlaceType: place.dogPlaceType || 'unknown',
+                searchQuery: place.searchQuery || null,
+                source: place.source || 'Google Places API - Enhanced Search',
                 isActive: true,
-                isDogFriendly: true, // Tous nos lieux sont dog-friendly par définition
+                isDogFriendly: this.isDogFriendlyByType(place.dogPlaceType),
                 lastFetched: place.lastFetched ? new Date(place.lastFetched) : new Date(),
                 createdAt: admin.firestore.FieldValue.serverTimestamp(),
                 updatedAt: admin.firestore.FieldValue.serverTimestamp()
             }
         };
+    }
+
+    /**
+     * 🏷️ Catégorie basée sur le type de lieu pour chiens
+     */
+    getCategoryFromType(dogPlaceType) {
+        const categoryMap = {
+            'dog_park': 'Parc canin',
+            'general_park': 'Parc public',
+            'veterinary': 'Vétérinaire',
+            'dog_friendly_restaurant': 'Restaurant dog-friendly'
+        };
+        return categoryMap[dogPlaceType] || 'Lieu pour chiens';
+    }
+
+    /**
+     * 🐕 Détermine si le lieu est dog-friendly selon son type
+     */
+    isDogFriendlyByType(dogPlaceType) {
+        return ['dog_park', 'veterinary', 'dog_friendly_restaurant'].includes(dogPlaceType) ||
+               dogPlaceType === 'general_park'; // Les parcs généraux sont généralement accessibles aux chiens
     }
 
     /**

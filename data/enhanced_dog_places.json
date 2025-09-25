@@ -1,0 +1,1901 @@
+{
+  "timestamp": "2025-09-25T13:44:37.937Z",
+  "source": "Google Places API - Enhanced Dog Places Search",
+  "totalPlaces": 38,
+  "placesByType": {
+    "dog_park": 38
+  },
+  "places": [
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "Chau. de Boitsfort 11, 1050 Ixelles, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.8053871,
+          "lng": 4.3933518
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.80675122989272,
+            "lng": 4.395183129892722
+          },
+          "southwest": {
+            "lat": 50.80405157010727,
+            "lng": 4.392483470107278
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Bois des commères",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 3024,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/102708200174991524395\">Zuzana</a>"
+          ],
+          "photo_reference": "AciIO2fAcIeEHDXtZLy7z4LuC4aUcUJMo5guuUBBIGurpR2LpWp2lzrVK201xqchvj9WJk55COy9GYzEhWoS26VaJ5xUFJz0tIKZX0yXoBJYi45_2-tsPxt4ja7QVqdvvD-X4pOeHw_-MSgdjzjlB4XPIrKOlDdt3pBovyqYR39LfJpuUG4IhNl0AWAG9JpifuwY6RqSYUwl8N5_PhpUK4oPyg4P6P_GKvdAKF6BIT8QDTgabL9kyvllfgiIb2WwkDEOQe41qfo-zs7Y-8CKxFgQtGSk4Yw-EAC1L1yx0MC9Et2rBSv3n3LZ9jyrxSCUZ9ecKWSV4P546allJMTi8gM_JSrDIGgUdHvTpK1gLbIVCItMdv_Kr5PDtnOhax3pcPyU28FPPnzwnkU8rTY0zwba_L5ZjzWoWVa5-PG03PTeM7t3iHTOTZ1V2Ql4QWjfwKKbYbxXwHU2RRVPkBE4LJVSbGtrNXacH2XQv5BYZTzQg2fP-UxKUInqRtGoG1QSsJNyMKf8pES-SsQM9-fMq899apW2CuTyRDrxqck7Wc87VWbSalVs87Rq2pHMv9-Xc4c3xXVl3LcH",
+          "width": 4032
+        }
+      ],
+      "place_id": "ChIJ9xwEMNbEw0cRlfYfT0AUOLo",
+      "plus_code": {
+        "compound_code": "R94V+58 Ixelles",
+        "global_code": "9F26R94V+58"
+      },
+      "rating": 4.4,
+      "reference": "ChIJ9xwEMNbEw0cRlfYfT0AUOLo",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 154,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "parc canin Bruxelles"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "1090 Jette, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.88667239999999,
+          "lng": 4.3277389
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.88814532989272,
+            "lng": 4.329546429892721
+          },
+          "southwest": {
+            "lat": 50.88544567010727,
+            "lng": 4.326846770107277
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Parc canin",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 4032,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/112173092647184370783\">A Google User</a>"
+          ],
+          "photo_reference": "AciIO2c2BuKdbgdLWKfosnjhv6GD00S_Jrakx4Uqacv4sNG5nMfdyuUzGYHUp3aAGXeQSciLz1lBtI1RkBkBexrycijmaSpZOGHiSzAeB-PEvnyHDK4FweY946wbM_6wJZvtfhGX0Jk9q-w2XBvKFVxOXUSpzmDW1bEg4FqLOxBWYcmIxZ3a4W4q2qQyVPyaQY_e5xSRsp1FJwR0W5EYKSnoal0AvNrBxpqPzrl4rY5rT1v53vy1S_1OKMHMlE-jc4oYlUYw993M6vXfD0jV2sEaVD63cgaAL_UziNTCbaexqIvABe5PUg4pGEFA1tDAS_pHwl1_ZO8wDb9E6oJSWOxVAFTBASN1Djrc6fr4GLEkNpumZtBVjMoUeoF15oWrWJgaooAKwgkZUSLaryZC80XTxqYOcNk4F5TqXbweLFQPmOZxmAwfARKbDIdGaHcGHMEW5dGEEP295LAPgKc-iOUnxgJtpk7RKkOyqBTN_AS61MoOhqx0wU3uQl2DpKsYW6_3nn5G3bpcGkvzh0yHAz3nCnIvWhc8WYYBaDRxJN7sAZxMX9_DbP06lQnRpHgHPlfDhsneZ5eBxnvHSQ",
+          "width": 3024
+        }
+      ],
+      "place_id": "ChIJp2w46WrDw0cR0yLbZ5MdRVs",
+      "plus_code": {
+        "compound_code": "V8PH+M3 Jette",
+        "global_code": "9F26V8PH+M3"
+      },
+      "rating": 4.3,
+      "reference": "ChIJp2w46WrDw0cR0yLbZ5MdRVs",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 8,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "parc canin Bruxelles"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "Rue François Gay 276, 1150 Woluwe-Saint-Pierre, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.8372022,
+          "lng": 4.4218346
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.83857917989273,
+            "lng": 4.423176929892722
+          },
+          "southwest": {
+            "lat": 50.83587952010728,
+            "lng": 4.420477270107278
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Parc Canin",
+      "photos": [
+        {
+          "height": 4032,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/111973497608805651619\">Sadhbh Hegarty</a>"
+          ],
+          "photo_reference": "AciIO2d5j1ffvXqXSMZtAbkG0SAEw1dYQTaUsV8EmeuAVzL2T9gVJtuEjInMNvI7CKc5WEIQEFW4yDo8TnU7kw19fqhx2gDz6yk2bxMDlULd6VkhNlE7mcszoynOd5I0FKPlgJBB47YFkxgm3Af1EfjXbr_BCY7iDsORDEtW3M-uFB6q4s4tUYyIOhQqGUGYZBf41xdaKPTaBYkR6nhckHcCVmpBZL0Nubk6ZFEeLUH8MhGM4gAD1YFnKx59NgLA9L8nEMYcbpFRzRGo2jy4-ScKqGsLUpC8f5MeS1VroifuO2lIw2szozjfOfT1vmmMUpkrm4PStPMGRjCTvBRnxXnfDK_gzHH6CtBu27E3MVQRW0R9xDKXnwBXkwerUkc7jL9vByzv5RZtnGVcrlLBiIvevRW6IhDtUWcTDDJjWX6uSMs9Tcg1myVgOqbTqTW42wphI06laDrOhluq0wu2jCjWj-4-0DNfWpJF1v0DybKAdd6DNNiMyWg3y_WsIUrF1dB4fDRhkRxBrYNaJP3_kg-OjSOz_RUVXXtqlMgmg8xKRdFDpSRBTbL996U-U98aB4oGlr8rnEG2QDbY-A",
+          "width": 3024
+        }
+      ],
+      "place_id": "ChIJmcYh91rbw0cRXYy6zFaj1UY",
+      "plus_code": {
+        "compound_code": "RCPC+VP Woluwe-Saint-Pierre",
+        "global_code": "9F26RCPC+VP"
+      },
+      "rating": 3.8,
+      "reference": "ChIJmcYh91rbw0cRXYy6zFaj1UY",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 53,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "parc canin Bruxelles"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "1090 Jette, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.8866354,
+          "lng": 4.327558199999999
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.88799487989272,
+            "lng": 4.3296301
+          },
+          "southwest": {
+            "lat": 50.88529522010727,
+            "lng": 4.325700499999999
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Parc à Chien Du Bois De Dieleghem",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 3456,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/117663337911589626751\">Martine Dubois</a>"
+          ],
+          "photo_reference": "AciIO2fpzu0j0R3FqmGLgNOLW3qNGfTA18XHqv7-b6KH4CThFSGFQuxSqyU2yIWzh9cQg_5rGAjcGlORQSGXkLLJSRuqVkCCoNSari2Tuxk1BL8udLKBFmr-1YHwgGlIdEwvJk9ypyG7tVCgK-njuOXhyoj8cThwomPsQA-H8qcK6xZOlvHKddmYdqhCh3FUQC8Uy_raOXwDaSN4tzptyprFVHeT3ODipQRRPMpiHHUPpuB3h-UxQ46Y_L7U95kFvD3rkv3_nXmm3J7IdSWhTrNna1A2Y4vowFmcG17n2Ru9Gih0IhcPJttjvnayTEF7CKDX_JZsKZOfB30DI_48JkO610mB1_OMJQ2swDgXNuHwZGfjbRLvt1tLDi74L0EzMsyBLBG86QQln86dR97t5yE6NI-pCoAKnT-sNfLBazraLNynCUUnYCllxQSH6silK16O6X4pNWrTWojCueF5IimHC8gWZM0e6GfrLnGVwAAqluPf14zr0DN9ta5Exz6Go2NG-wDCROkPMo3ZgMV7oBA0aY3pBczjiT_ckpQnnAZN5BbBnNiJwoKU4Ib0GYc6shyupGfVoVAI",
+          "width": 4608
+        }
+      ],
+      "place_id": "ChIJpyRK883Dw0cRefWUti78ROI",
+      "plus_code": {
+        "compound_code": "V8PH+M2 Jette",
+        "global_code": "9F26V8PH+M2"
+      },
+      "rating": 4.7,
+      "reference": "ChIJpyRK883Dw0cRefWUti78ROI",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 37,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "parc canin Bruxelles"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "Av. de la Houlette 93, 1160 Auderghem, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.8125222,
+          "lng": 4.4178896
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.81385032989272,
+            "lng": 4.419175679892723
+          },
+          "southwest": {
+            "lat": 50.81115067010728,
+            "lng": 4.416476020107279
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Parc à chien",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 4032,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/117663928689345312871\">Charlotte Teurlings</a>"
+          ],
+          "photo_reference": "AciIO2fK5R194yLdxoyGVDK6_wcfPKlJ15-qLW9w2ikd3YCVx3AfyhI9aVKBXhUfbNEC-kxo7yRG9X-0TQV6jyDsS5vWX8mGwoWn2YSdkHsWNzPNtlOp17P3JWl44riLgpGnqqGZW1hchsfbmWnl-G2ObqJ6-tT7WpFp8UydFx5M1uBYCsKLn2gje1ay34q8Vu-7I3Kgo1CfGQMlSZSh2VuZK4CO2SUGJTR_g3a4ZdukJHUeYEYUV_i4TdqxufmH9RnjBQMfky1PGN_ax48H40KYl6V5PB-v1TV4SSe2QbjmbTyOavhMvMqrLsl7KqFWX0cSHaoBOXkSkf5I6qsFB1LnqqJZip6kUGCMKire8TdpVQQbQEbKR-9Xu70niU_5HnM_tqRuDNO4n8Dc1C27KoXRn8tnXancYXxfiDG7itV1a8S4VxLlhBo0U24cSIhJkuz4Kz9kjnjrpdEXIpDSDZyXUXwfOQxwYxvmCHLorXRcl83S3pRs7NxoKeXr5UOfDamnkgzrOpocYPKx4KwROHRftadg3f_I3FqngbGaLHR2iqVzl4rbxVJ9QdHNp-WNvTzLIdU1FhN3tZQO3bb-Evq_nGTSWfVxOw",
+          "width": 3024
+        }
+      ],
+      "place_id": "ChIJk1PiSQDbw0cRotyDNF3WXW8",
+      "plus_code": {
+        "compound_code": "RC79+25 Auderghem",
+        "global_code": "9F26RC79+25"
+      },
+      "rating": 4.3,
+      "reference": "ChIJk1PiSQDbw0cRotyDNF3WXW8",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 17,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "parc canin Bruxelles"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "Av. du Laerbeek, 1090 Jette, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.8827917,
+          "lng": 4.3033
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.88451452989272,
+            "lng": 4.305249750000002
+          },
+          "southwest": {
+            "lat": 50.88181487010728,
+            "lng": 4.302438349999998
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Parc a chien",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 1080,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/101773810355732952045\">Didier Beaufays</a>"
+          ],
+          "photo_reference": "AciIO2e-qSey17390zdKe-ZZZ3shPbQ5Ppdjv8wsnexG5t429W6sHOMM_WvcbdgMF6CW5YJ0xHq9Nw4biz47sDHWrbzEpAty6-M3pi-JkcRvlaXeHhvWcTc5-abahuAToFhjrYrjhxS30c0OBBRtGIAqIzQH4N-Up95SMzl2cOfEMnDDIIsCpIQCdNnRijurOwYcMQUoWfTl62qIL97nfN_oyw9b6LxFpz4EJJgLW5dBWcMXo6TQCI5zz92Tf6JWN2fJ3oNho0GNmNrg_S6npzsJ1nnECAH9OUwaGkMxRrVCjjofUEqEx8x1KARVdOon00nmKlAJLuMBZDtTg_Knqn_HCr9wyPbq2Y6c2Chqkew-Gk--4ge9wL04s_azAuW8oWIYqwCZMzRym5sVrcNbmf1_w5tuFjMqKxetfDzSoQs4RZzDWITy2aVIFKheQGUzI1CNsUHYDkcEeS_64dFNqbJduEiIXBUHvjhO6rJu0faF3Le37ZCP7ICDK8wMkmT8nNEbBAVc_iNu1ZSUxRY7mWlNdrsRj52dBovMivcoRwD26CsXUIMzXMMMO5flL1dDLcmpysIfLg",
+          "width": 1920
+        }
+      ],
+      "place_id": "ChIJE78BY-PBw0cRAEHtNW-yExs",
+      "plus_code": {
+        "compound_code": "V8M3+48 Jette",
+        "global_code": "9F26V8M3+48"
+      },
+      "rating": 5,
+      "reference": "ChIJE78BY-PBw0cRAEHtNW-yExs",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 1,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "parc canin Bruxelles"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "Pl. Hermann Dumont 291, 1060 Saint-Gilles, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.828692,
+          "lng": 4.3523324
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.83009127989272,
+            "lng": 4.353577179892722
+          },
+          "southwest": {
+            "lat": 50.82739162010728,
+            "lng": 4.350877520107278
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Place Hermann Dumont",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 4608,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/117736317794556056712\">Mohammad MANSOUR</a>"
+          ],
+          "photo_reference": "AciIO2fodNx7_cN3MZvYwNy6i2rieaIAqpH-tEz82pndMpQVIaAlA-j12Nq6kJNfKNlM0FgGdXwfwfyPBDEv71v0_6odQ_6zEltfquxHYvpLACySSW1bT9xjWftBhAwXYTguPKKVioo7ecEz5zGoRMKIDpGCaJKxnetA-g2MwHQKbv93aJWqMtm77vKvw1fI4En41Tl1dMDinJKA9lNWgUR_aP22TldG3ehTRuVas4wDGaq3LHr7HkX3JT78rt04M96ifzUWfudHeNtXaOftCKDw-vaggl1Yv4NJLWzieM9fSIgJBFTJ8Ojgy43EJY9Go6x3jKcPBbnwhAgZ87TkLYO1wuNmIRA4rDKUyIkeVvaFQyMHiz1BdG4osjCkWunSTo9F3mqwkMieIp2opvWomgwJqHKjhwX2w7LbgrHoGUdNPfSPcvklMXi_zOENeDIa9f4mwDAOppfXv1PydS5bKIeR5eL62I9M7mO-cwW2_6W9-6fE53ja6UcHvGzS2TwOrP3FM0CLOfo_T2QJGKvnK0XwRSOaUrXQa0t6-LFDQvYd6lUmBgODNuNuCI8Oy2LRpG2aYrzI2Aov",
+          "width": 2592
+        }
+      ],
+      "place_id": "ChIJHdnQ9WDEw0cRXquyKkwZoho",
+      "plus_code": {
+        "compound_code": "R9H2+FW Saint-Gilles",
+        "global_code": "9F26R9H2+FW"
+      },
+      "rating": 4,
+      "reference": "ChIJHdnQ9WDEw0cRXquyKkwZoho",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 36,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "parc canin Bruxelles"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "Sent. du Broek 8, 1082 Berchem-Sainte-Agathe, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.864126,
+          "lng": 4.2914308
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.86549292989272,
+            "lng": 4.292866029892721
+          },
+          "southwest": {
+            "lat": 50.86279327010728,
+            "lng": 4.290166370107277
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Parc canin de Berchem-Sainte-Agathe",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 2133,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/110860861243439981765\">Axel Diangana</a>"
+          ],
+          "photo_reference": "AciIO2cHG-604PuvBWz6WytGR4jxGztTeW3_towwlfUjVHPo_TxP40hOtc04NUhJYuQLlHTZqWg6viIrSt_STkZMpQ6S9N1T5A8IxCb7opt022XAk3N-XDj9wq-zRlhGbwmlSaeeDSv6CXquuUH89q3hSXDAodxi-kMDSvj7m5xWfbtLkNt_qQiKzyipFautN1CA6elqBku0qhqnwmPaZxN9KsN5yKW4E_HbkMRHsrUv8UJBgjch5IeQ0cOlSJY5yzsfQStx5O17sZMl11TTrJ0uRQb31GLNdc-3WMfmyalXDCbhUqAItvii3x_mZXDiMbIyKz2pxg0y_sldnP4TrDx2K6umEDqfpLpYdWt-tFc4h05sxdNIYkvUUohpj9pWUhiU4E8ilVaXeYJbne8Bpf0tKMeQzqKfJ4Ht9SvdlhAyocqILo5JNig4O2nWPfrM16rbXpkJjn5v6NPesMlJe0DqCJzEzw_jn99In2-V5WvDXRFyeMt1P0J5hDACZQbnezPV1lpjmAi9p7_6dx3gas40qrrAG938_7bbGsLPqMyoL7dV2L3FddddfFi704zktaG9MjOoWq8u",
+          "width": 1080
+        }
+      ],
+      "place_id": "ChIJs3sL6YnBw0cRdY3kb5_0Eww",
+      "plus_code": {
+        "compound_code": "V77R+MH Berchem-Sainte-Agathe",
+        "global_code": "9F26V77R+MH"
+      },
+      "rating": 4.2,
+      "reference": "ChIJs3sL6YnBw0cRdY3kb5_0Eww",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 14,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "parc canin Bruxelles"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "Josaphat, 1030 Schaerbeek, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.8665978,
+          "lng": 4.3837297
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.86750412989272,
+            "lng": 4.385198979892722
+          },
+          "southwest": {
+            "lat": 50.86480447010728,
+            "lng": 4.382499320107279
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Parc a chien parc josaphat",
+      "place_id": "ChIJAQojXL7Dw0cRxC-oHzB6QIw",
+      "plus_code": {
+        "compound_code": "V98M+JF Schaerbeek",
+        "global_code": "9F26V98M+JF"
+      },
+      "rating": 5,
+      "reference": "ChIJAQojXL7Dw0cRxC-oHzB6QIw",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 2,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "parc canin Bruxelles"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "Av. des Anciens Combattants 250, 1140 Evere, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.8679536,
+          "lng": 4.410123
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.86934327989272,
+            "lng": 4.410851429892721
+          },
+          "southwest": {
+            "lat": 50.86664362010728,
+            "lng": 4.408151770107277
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Zone pour chiens sans laisse",
+      "photos": [
+        {
+          "height": 4032,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/108377022771137629283\">Jerome Dassij (Educ-production)</a>"
+          ],
+          "photo_reference": "AciIO2eP8YG97tORoEiI3V6e71BC3QLoA3VnlR0hC8-k29x2lLRwoMz27s-V2KP3smxN0uwC5Un6PwIKmLwnpgbygxgyWbdZhHmZkoewOhjAlQNNsGqt0WWb6rBttQ1JPiPlGnwV0G_ScIF2gbt6k1LaZahE22BU-fmvLO95OuDJzhatC9dAR3LQWtmPaMei7AXhobX7LzfubNA_wE361JwQuguOSKdyxruR5ijVuF3K4BmJp31vBQ-GSMzJ4ZsV-HXen6_08-1bRhOSf7NFuwmYLC8u7JVys5JgUWlhoUsNH5w03ECu-nbP4jGaLRXiSwCLLBV-CcHAex3ONBoZLodAFdOH538QRhAAxonIC2kCYQJ9_uV_FpVIdeHeVlI18qDiWQYNIL8wlqmXO_OHRDVXXlB6zbIEFGkpqxu4Di6vjrRVfjONwWewDlAetDnQXYwRUxt1NfP4Yo4BeASwpS8eCh4MKKyFpOLSO_d9FjCGZGFQwVR90JX_q_XBRqC8enpA5H277Z7VpAmIAslC2ArsMjGrwmQQa1qy6d6lBYkiSrFdUtUnwd1bSyJOXz0OYqgTsnXFY-n3zQT3Cg",
+          "width": 3024
+        }
+      ],
+      "place_id": "ChIJ0c9apCjDw0cRJ0RAsRui8Qk",
+      "plus_code": {
+        "compound_code": "VC96+52 Evere",
+        "global_code": "9F26VC96+52"
+      },
+      "rating": 4.3,
+      "reference": "ChIJ0c9apCjDw0cRJ0RAsRui8Qk",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 9,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "parc canin Bruxelles"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "Josaphat, 1030 Schaerbeek, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.8665075,
+          "lng": 4.3838265
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.86745897989271,
+            "lng": 4.385182029892722
+          },
+          "southwest": {
+            "lat": 50.86475932010727,
+            "lng": 4.382482370107279
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Parc d'Agilité pour Chiens",
+      "place_id": "ChIJXWIkGy_Dw0cRnzTwC_i1mqk",
+      "plus_code": {
+        "compound_code": "V98M+JG Schaerbeek",
+        "global_code": "9F26V98M+JG"
+      },
+      "rating": 4.7,
+      "reference": "ChIJXWIkGy_Dw0cRnzTwC_i1mqk",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 3,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "parc canin Bruxelles"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "Rue Godefroid Guffens 22, 1030 Schaerbeek, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.8652519,
+          "lng": 4.3931071
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.86685407989273,
+            "lng": 4.394589779892723
+          },
+          "southwest": {
+            "lat": 50.86415442010728,
+            "lng": 4.391890120107279
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Dog Park Terdelt",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 1080,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/114725925860537903872\">Sofie Walraven</a>"
+          ],
+          "photo_reference": "AciIO2d0FlaqkMp7uybgwcY5_bDMGuMyeEak1Szw5z88gcY5YyB9evm5Xig-lzHYOPRxIvDuOSEuBrvOLaPX2vWPIsHb1mfhoS5QKzn57mVel2YCYEzAmA45jRckRt8Wm-HIk8PVJ1obKglTcoQS4FldKlFxMsJdWBGdGll4EneRlsgWXwKNxjcYaq6i7JIuSfuZNItOPGN-K2tj80Aq8Z8l23peGoyoPR5_yi1O7iuwjrg7SqG6DGS-c-McPPF_zlTGdvbFEmPXWdRoPql1Y79YKpLtPzai6KHSC_pvKBsUNk1kB4xH-X5ZaL2KIfAiiYGJ1E9CTjYE3gkezm4yaUwG4TeHOI8H3IL-TukO4VGQJAl8jkIV30NS7Vka2HoDxtZ6yIFUWpdb3SuoQekflba9-eP8Qak1jBoGJHRqRHSe-S5agAtIqSDSzuNAX9Z9HVLnh7uvxEjS2vVn5Gd-Sl-zHRpoiV69cylFRIANyICqzCjtGwReOiXvUpKWBa3oBQpqZyNJQ_4sJpOPnPJ-0Pgx2oEJ6sau73kH2DXDmVjyzs_eQMYvU9XnK4Rz0On2VBJooYNqG8lMvsxwGg",
+          "width": 1920
+        }
+      ],
+      "place_id": "ChIJ_w4gqTHDw0cR8G8lEsi1L-s",
+      "plus_code": {
+        "compound_code": "V98V+46 Schaerbeek",
+        "global_code": "9F26V98V+46"
+      },
+      "rating": 4.3,
+      "reference": "ChIJ_w4gqTHDw0cR8G8lEsi1L-s",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 12,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "parc canin Bruxelles"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "1070 Anderlecht, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.8276689,
+          "lng": 4.2922875
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.82923777989271,
+            "lng": 4.293744179892722
+          },
+          "southwest": {
+            "lat": 50.82653812010727,
+            "lng": 4.291044520107278
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Parcours canin Lemairepark",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 4032,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/102793395989456863911\">Citizen 007</a>"
+          ],
+          "photo_reference": "AciIO2eG3JHbEvm8_vm5-6hb3yRDAlEtAskedkacVuu_Y2zprZzT7bW8jyYtdl4YdvN-jOaHew2FjDfqoceBR0tq6-xugKa1CeSmJRVuq2xdbjXbqm1aF5CxeLsxj5a9zP5o-Lmj3Uowdnum2LOcGinGbsCrSkFT82m3_2_LbbBqOtt1vz3SeJNLgtFfFHmlyuwgJbwZnfpqle0pX4Ruotwhc-wyO1UzLFpeJ6IdSK4J4idJjku1rUZvXanziPTXs8nV7B7hd2tZZATNoo8deUE5y7_Stcy_dLMEAuMT_awsw_0lSB1EzxOEYB18i1jeg625tAq5rphkYTKS6bMhj51zWY0uaEOJE74FrSA8WBSplcMV1T0CZtmoWfVzCbILNVos6Trm6mPB4qUlnqqS7ulDPnX2H8yDpu96n3zQV4Wv9uyFklK97p47dy4l9pYmNJeIxSWwuqN5zWIe0kjPc65gdP0LqrY6W9LH485wWdR7Niu30FmE7UVTHQMH5cyfxz0rs3kbWqaKuSdNZaiZTbnz7UNzu_RX78c0OU3V0nKF7jbZ7FKG44102m6-aTW8Mpi-4HZX7oh9iz70ETt_98vUfCtIah-R7Q",
+          "width": 3024
+        }
+      ],
+      "place_id": "ChIJvRXJte7Hw0cRFYFd0_h5ZGs",
+      "plus_code": {
+        "compound_code": "R7HR+3W Anderlecht",
+        "global_code": "9F26R7HR+3W"
+      },
+      "rating": 3.8,
+      "reference": "ChIJvRXJte7Hw0cRFYFd0_h5ZGs",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 56,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "parc canin Bruxelles"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "Av. Marius Renard, 1070 Anderlecht, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.8239889,
+          "lng": 4.2802668
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.82584077989272,
+            "lng": 4.281518229892721
+          },
+          "southwest": {
+            "lat": 50.82314112010728,
+            "lng": 4.278818570107277
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Enclos de la Liberté",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 4000,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/114107756738553936270\">Estelle Smets</a>"
+          ],
+          "photo_reference": "AciIO2ds9qUG4JuashB9lnECXabgCcW6pU1YBJeZwcissmxvo_6hOgM65ZcvlXbwDrF_U-CcAXss3UN7Vv8br4anwlXWJCmpsNtHxONXyjfbh3wRlwndMnBRkHke_1Sqw9lERY9Znxkdp3kRb-vKwmTyXLfUGWpYFLrLd8GlPcrkuwghadILK2ITu201PmFdgPNzm40gPg86YhwP6sIkFKKQLDt8Vz-orKE1vi-JVKKpwY4l-VA02W0yW2Zh1ly40KqTg60R1wg4t8b2nwhrMyi9GkvtSn80vaUv8vF_R1pOQc808czyWeOAL6SCqa9oz2H5mQEwmyxvHBDYEvOMeIrioEe4uvMCT0H3Clu1HM0z3RsXNzL2aLVkKJDcNBPLRJaEjpggeXcxneYtdigQbaZ_1iWZ6cCdb3IpnBeRaNYvOtqbSxvyLVtO73_yqmb4oInPEET-NYQySsmU36IzYwEYLEcq3rJ1XqOJFKwc4gFOy0qKbI2-KM8wabB-zqJBDgXtlYOVXXRD_o0OpRCgOtdGM-q88jVhJCf9nYS3hbXJQPs7cT2ORK7-ziHh6oX_Dc4ZE-6zM00dACyXZg",
+          "width": 3000
+        }
+      ],
+      "place_id": "ChIJmc3FQEPHw0cRtk0bpvzCqEA",
+      "plus_code": {
+        "compound_code": "R7FJ+H4 Anderlecht",
+        "global_code": "9F26R7FJ+H4"
+      },
+      "rating": 4,
+      "reference": "ChIJmc3FQEPHw0cRtk0bpvzCqEA",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 4,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "parc canin Bruxelles"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "Ninoofsepoort, 1000 Bruxelles, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.8497571,
+          "lng": 4.3383256
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.85098032989271,
+            "lng": 4.339797679892722
+          },
+          "southwest": {
+            "lat": 50.84828067010727,
+            "lng": 4.337098020107278
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Parc canin",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 3246,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/111060344063551800803\">gaudetmihi</a>"
+          ],
+          "photo_reference": "AciIO2ctKwpokof_gpxSNPYaXFHXTNfjRm9iKemuGy-bwgbH5xAPIjjg7-wiWe6wRfoQZ2LNn6x1jWd7GwMBSBGlK2VATtyk_CnRb6oXWekqsZdw9hcsOXrAFOBY-IawL4H-KJ7ItxNo110_ez_1Nt6fOf0Rpz1fE9vXfTVjqMEzSu8ME0gbDdqnFN9tw9yaUSudw0Hl_qwMGccBe7u_M9pX8WkYpNFnsxVbJLO2O_fy9mnQDgIqKWgDmYCFNkqknEnFqDF5rs11GSigZ0KIW-xDwfOfAHplAKjhcvaAcJ6Mk83QK-acEgIiYFIMTL4hYiTslKEEyoXhJJFAt9Smm0ctmKO0of9OeOgUodD6QmUtpTKS6z4csyobex1It6S0aX6UnSwFvhIojQs2x3s-2tSJmIqVsIY1_9H5B7wQPxcIKSlVirGxnEdT6MznID8a_7Vf1W7F9xSKLkmwRWYT3G7oLazlz2vcJiKI0eoI1AFftimCCuTJafXkNkjBm_lcsc-_vtnxwqYuXbJOdimz4C9TtpVVImEWbvhcAT7AXtAQ1LF9JVRY23v7bSGQ2_QDAUKWtP9EPEI0qokCgA",
+          "width": 3371
+        }
+      ],
+      "place_id": "ChIJXYHFM4nDw0cR6FVsB4QEdhI",
+      "plus_code": {
+        "compound_code": "R8XQ+W8 Bruxelles",
+        "global_code": "9F26R8XQ+W8"
+      },
+      "rating": 1.8,
+      "reference": "ChIJXYHFM4nDw0cR6FVsB4QEdhI",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 5,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "parc canin Bruxelles"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "Boskantweg, 1830 Machelen, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.9098689,
+          "lng": 4.4507654
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.91131662989272,
+            "lng": 4.452174179892722
+          },
+          "southwest": {
+            "lat": 50.90861697010727,
+            "lng": 4.449474520107279
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Cage de jeux pour chien",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 1468,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/109849837940815299476\">Vincent Claus</a>"
+          ],
+          "photo_reference": "AciIO2fWemZ-ln2cSsM94ZjKdWNw92mbVk90P5WcRXPx0LsbSdZ5-BgDvPnrOkVYLgSSgyWxn68F1rKpnZaNnQiqY0cnuEwDh3URrfU-8Od7bGUDyTmvRJKk1g7sGoAmbQCgxZnJh8oHjg8C5daVWgSEQH26OB1i62PspdOKb8GyGN8t1qYNoRmF9o86B8fNSFnAA6M5Z6sfMpnWfBBnnzD1cWMbAA5dF8nHnRk6a0xViI-Nit3XuqUJH2pYsHCxdIpHh4n67zOJkTMrFPK7702o3TAaRtr5M8-l7rqYDtfwqqoV9U62Ya7A08HIWRK0z4Ik7Dywhcx0Zq5PmlRmpZdmmZm6i-CNdf-BycKr-fODal7phNT6hrVw1qtXTw5Qfni5JkKWxSxhVEQcahz7KXrLeNxAOlchAfqfyNLRYqWoBRwEFzeVcVC1VAjr_yNUXMbasBIOEI8vJiA6jOww71DxolwKbF-nJvt9U7x7Xjh6wNUSVXPs1wTahXmL2vzn_ljshhVZ31hhwytKAHTin50C9mR-IyJrhX5P2nD61tQqf7k_I6aPJ-WI7wboZ3FRkVqCKtxQSH5Z",
+          "width": 3264
+        }
+      ],
+      "place_id": "ChIJeWpJDd3dw0cRAHf6qwB_PYg",
+      "plus_code": {
+        "compound_code": "WF52+W8 Machelen",
+        "global_code": "9F26WF52+W8"
+      },
+      "rating": 4.3,
+      "reference": "ChIJeWpJDd3dw0cRAHf6qwB_PYg",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 52,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "parc canin Bruxelles"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "Schaveyslaan, 1630 Linkebeek, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.7630991,
+          "lng": 4.3391149
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.76441927989271,
+            "lng": 4.339936279892722
+          },
+          "southwest": {
+            "lat": 50.76171962010727,
+            "lng": 4.337236620107278
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Parc Schaveys",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 2268,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/101852843279253847963\">Angie Burczyk</a>"
+          ],
+          "photo_reference": "AciIO2enyS3_BRKnENzwwIErzV9PbUqJdqi3x0uxXIi0wj49RiQ_8htRzKDzKjW8fD9bYXgHETnKk4bmkk8bvh1yLpN1L3CW1iBQ-iRNduOL6WMY2On-D75zaRL4_ZrgShLSqSife5aTqv39Kb1SWNj11antMm_8iHUl6UjgiFQCKBGEYKknAznXwJ8OJu-SQzdvb27tiNuPqq3Ixqn6qLwol0XqDkfV-x1hy3XWosileZG0tuncIbo41GEpHBVzObGYmKEYudqbbH83pUs6-iGkrFUf4j1QrP1d38kGwqMkbyzDmhdtl_z7MXW3KGb_4LsHISI_ywnADgUJnrBwkb81H_3H8EQpr-z9Qiz-2l4dy6Qd3YLRVQiCd0EPnmV0cwTmc14vi9-LRHy9jFvSCmnbKdXaHZTqn1FBvr4XQrn_Z6jS9bROxo99Mo9vJhxjH3LRCesiOjTz7orpXyp9umd8HscOkm12wIpo_S0W_gTxvTP8pkrH1kYYv-9E6xkReexd5UAZNpJJqSHDXiA94AiLyX6NRykpxK33hOtGa9DY7O46vPQFfMlkUCo0htLbFXpdnZW0iKm1",
+          "width": 4032
+        }
+      ],
+      "place_id": "ChIJJUcXH4DFw0cRx9pYvCcJ-wI",
+      "plus_code": {
+        "compound_code": "Q87Q+6J Linkebeek",
+        "global_code": "9F26Q87Q+6J"
+      },
+      "rating": 4.7,
+      "reference": "ChIJJUcXH4DFw0cRx9pYvCcJ-wI",
+      "types": [
+        "park",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 303,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "parc canin Bruxelles"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "Av. de La Héronnière 88, 1170 Watermael-Boitsfort, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.8117527,
+          "lng": 4.4119169
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.81307307989271,
+            "lng": 4.413342829892722
+          },
+          "southwest": {
+            "lat": 50.81037342010727,
+            "lng": 4.410643170107278
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Parc de la Héronnière",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 3000,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/109559524357193990677\">Yves W</a>"
+          ],
+          "photo_reference": "AciIO2fTyLjAcU0wR3ST6IXVIiI-vkLlfzcULkr76K-rPg1JSwJlp8cjcvtUl3fkp3p0p48cMbgA32lZsm4qMJJhVrPNoAGZOnqTWQvSPkaf8XUl9ksdG2p6fWjy3rfHDxjM3DKgAjn_RI-sWbiwhbtcMmFAfqVOyFUUuW7kpjsP9O2V3WZv8I8zQMFvs2KEeBdPhtRDvSevZmkSqhKvSumqPF7hjLn2y75NJRXmwnh6lMnfmK3zUbNtLWjFAIJWeUH5q9Snh3MxXaskhV4AFrEM1R7M2-LBzaZhnkmdwGwCWuQh5U2A3ZH5QOsi71WVc1lcW9R6x6w_cqww1qlWNt2OKDSOXbUrb3mrD-z2vCJpQDQwB284qSBDNTMlQEV2wpeocKD0CFzoGz9jyQEoHZLbJEi6bmLClru5R5WMi4YZumaBe28UAmdu7O_Zek_4V2UpTm3ekq2zEJ9Ia16qr72pSGLgx6pgY3_JtFnn3PD966xnf1G8Lp_8QDi3R-87mfSP3RgYun1kf22RVx9GfXGh3WGHTsXPL8_pwKaA9PAwol1o-ZwAwMBynb_4PWDarWBC8dIh4g",
+          "width": 4000
+        }
+      ],
+      "place_id": "ChIJxaK3-C7bw0cR6xrKL9Wmphs",
+      "plus_code": {
+        "compound_code": "RC66+PQ Watermael-Boitsfort",
+        "global_code": "9F26RC66+PQ"
+      },
+      "rating": 4.5,
+      "reference": "ChIJxaK3-C7bw0cR6xrKL9Wmphs",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 51,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "parc canin Bruxelles"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "Av. Louis Piérard 60, 1140 Evere, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.8748053,
+          "lng": 4.4069764
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.87617737989272,
+            "lng": 4.408187929892722
+          },
+          "southwest": {
+            "lat": 50.87347772010728,
+            "lng": 4.405488270107278
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Dog Park",
+      "opening_hours": {},
+      "photos": [
+        {
+          "height": 3072,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/106870072102069762417\">Agata Szybowska</a>"
+          ],
+          "photo_reference": "AciIO2fukYzfyyZ6Xn8UY7YBIa_glf7KykqzUoyawmWtQaMFhfcT94e0Sh1f0pgb2r2FXyiPUJimicP-NCyNsHrnhqj00tUQNG3hgQyPHNqumgH1hjtL2g4gPw0yxFyUnDCiPUYTNE4540hyqhW0HYekUo2ddzCSa9UiETWn5YnVh4jVsJy5HYeC3JxBxHTkmAophH6WZ5oZThTqMUK7gTwaPTpEUvgerAkKoqAdbG6oo2Ct_dPTFUhxSHiUecQxVp3bVt0CjyBVj6mf25UaOC7P_ZAiviXgJUtVi1zD8bwrkH9TbeFIc6JoD1hlSLbSXanZVz3yYY0oi-2T7-s61PdXZCcLmDW2QUkkTUVjD1WZi7kyDwUa8IGS7HjGMtJXTlcu3bvCLsBhDZzdBtAj-P1vUW_x5DLqsiphQAhsmi6m6BxjKCNr7_Xv4m-kSm50pbbHiEqaOzA9kUu8mFgrlMdWqW1wdRwZdzbTDKHTiHCyJoj9d1v5W8i2m31hnHxZl6R0ooDZeozt5zCF-nVtCt_BZhkLEXebPCCR8eSYOLcRwSPwthn9ICG9Sde9y82kr3xUDaforNjs",
+          "width": 4080
+        }
+      ],
+      "place_id": "ChIJTXtIOADDw0cRvW7nck4kkBo",
+      "plus_code": {
+        "compound_code": "VCF4+WQ Evere",
+        "global_code": "9F26VCF4+WQ"
+      },
+      "rating": 5,
+      "reference": "ChIJTXtIOADDw0cRvW7nck4kkBo",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 2,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "parc canin Bruxelles"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "Rue de l'Hôtel des Monnaies 100, 1060 Saint-Gilles, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.8302928,
+          "lng": 4.347549
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.83162067989272,
+            "lng": 4.348957529892722
+          },
+          "southwest": {
+            "lat": 50.82892102010728,
+            "lng": 4.346257870107278
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Parc canin",
+      "opening_hours": {
+        "open_now": true
+      },
+      "place_id": "ChIJhfS49D3Fw0cRj1VmuMttffI",
+      "plus_code": {
+        "compound_code": "R8JX+42 Saint-Gilles",
+        "global_code": "9F26R8JX+42"
+      },
+      "rating": 2.5,
+      "reference": "ChIJhfS49D3Fw0cRj1VmuMttffI",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 2,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "parc canin Bruxelles"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "Rue Maurice Charlent 34, 1160 Auderghem, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.8165992,
+          "lng": 4.4093494
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.81793697989272,
+            "lng": 4.410717879892722
+          },
+          "southwest": {
+            "lat": 50.81523732010728,
+            "lng": 4.408018220107278
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Parc à chiens",
+      "place_id": "ChIJvdhuUwDbw0cRVtSQPrf_NL0",
+      "plus_code": {
+        "compound_code": "RC85+JP Auderghem",
+        "global_code": "9F26RC85+JP"
+      },
+      "rating": 1,
+      "reference": "ChIJvdhuUwDbw0cRVtSQPrf_NL0",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 1,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "parc à chiens Bruxelles"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "1020 Bruxelles, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.889217,
+          "lng": 4.3535906
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.89010892989272,
+            "lng": 4.356784399999999
+          },
+          "southwest": {
+            "lat": 50.88740927010728,
+            "lng": 4.351513200000001
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Parc de Laeken",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 2618,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/113036787278517334524\">Anita Caruso</a>"
+          ],
+          "photo_reference": "AciIO2cw7jPGtB13SR2LuyrEuV3JBVxexDg-NRWIIkcUIyq_Wqv9ZHyQEgzUaMXY0UoU1VQpZtOE5IsMmeWs4TNFc-_im3dDNDntKmG-N8dQzAd2PasSnEwc2ilNkjRj_i1spfnKlYOzGQjSU4rAVaIQkmo2l9NMSP6EO70IvZHL-fkN4CCdHtoMIdjUw8ybvvQsRqrvEJqnIdpAXViVWfNoi20EnxvYj8Jc-9aVCfLgCFTP0GowNPsTYEtOq6JG9s2MMAe0tS2UzuTaLLZpp9TAkkQkLR1SrE1mO61oKKSJ12oTT-tqq3TgSOkNoR0hyWxckN6P7BhuUc3LnHda43QxF8xIOlykggXLh-UTD23NxXmk44-_bEmAAAjMNYYaao6v7Ky9rr3SdaGZws2m26R9sr_FbZgTid6ItNYuqzzQOfbiucMKwsnfOOYf2pYJ0xPJli3CGjet9X_Rklr-zRI1Rrmq5KkQp_4y_Kg6ihm8TnXZ9xeaPfV01DKzzfIVzLYLDRyS0igULouqihuhU48MULzV9a4EcSojGj7Mt2DwE3QPDNamkK8dkruBEQzZ2cpw1FJ0qdZy",
+          "width": 3490
+        }
+      ],
+      "place_id": "ChIJbdEdNk3Cw0cRO1KiRD2y3Qk",
+      "plus_code": {
+        "compound_code": "V9Q3+MC Bruxelles",
+        "global_code": "9F26V9Q3+MC"
+      },
+      "rating": 4.5,
+      "reference": "ChIJbdEdNk3Cw0cRO1KiRD2y3Qk",
+      "types": [
+        "park",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 6867,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "parc à chiens Bruxelles"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "Av. de la Chênaie 83, 1180 Bruxelles, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.7878239,
+          "lng": 4.3488738
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.78940812989271,
+            "lng": 4.351284449999999
+          },
+          "southwest": {
+            "lat": 50.78670847010727,
+            "lng": 4.348070249999999
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Parc de la Sauvagère",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 2988,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/101696241291370270062\">Manon “KaasKoei” Bouwer</a>"
+          ],
+          "photo_reference": "AciIO2fRZ38BB4_PxqN-0DdyRssRIlMzSvPqwpTBd_2BPHQFpjAPJ3fbFFC1f57DkoudZBNcJtx0yZ1iv6S_vfrXY1bPS5RGMV6JzTOmAmNJkYNiVw5QSx0RYq4-iP0ImI6VV0aYzWHdTUNq175MJmeSrgaBUc9AbnRhK_15opF8iUXjcY4jkGBSuf5kTY9LLKaiDe7EkO6SvK8josmROeNYmcPNjyHeK4Ki9-e71RCl0zgbUkCMDNg87uEth-EdKjTP1oyUzKCPCmLOlPs07YjSM0B3zrAMbTq7p8UBpxhhgTB_1SDH1VIRM5fqFrJaD3irXbmhoXqUEFQPCQzT-T7S2vLir85TsfT4fhyT4_1St7aTjBqK6FFJ9BYXjBlAZ09YsGAByebHf5F0XOIsNoR-1L53XygabZ0f0s1cqd1gTSJuUSgUvKMqQR0ue0ZzRmnL2QwdmAzfTSI-GNm7NnVZe57SRz4S_rMHe5TyqPrfa3K16J4tgKnEkWovp4rWon1-LCxRgYnx1zKjq-cabRb01c5CVCXCe2xDalskVkXGiVdvSP6MuJSMPH0jgqdOMn58v5Lh8VqYatr_8g",
+          "width": 3984
+        }
+      ],
+      "place_id": "ChIJ459kiaDFw0cRJzd1J41pbmU",
+      "plus_code": {
+        "compound_code": "Q8QX+4G Uccle",
+        "global_code": "9F26Q8QX+4G"
+      },
+      "rating": 4.1,
+      "reference": "ChIJ459kiaDFw0cRJzd1J41pbmU",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 671,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "parc à chiens Bruxelles"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "Av. Général Bernheim 18, 1040 Etterbeek, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.8266979,
+          "lng": 4.3895558
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.82804447989271,
+            "lng": 4.390904279892721
+          },
+          "southwest": {
+            "lat": 50.82534482010727,
+            "lng": 4.388204620107278
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Espace de liberté pour chiens",
+      "opening_hours": {},
+      "photos": [
+        {
+          "height": 373,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/114579145096154095503\">Pierre Jacobée</a>"
+          ],
+          "photo_reference": "AciIO2cQ0T8l-sWlZSj24-66uiP9cVwosLojHuC7GXLdE94R3n-SK4tm4C2eyRcNfAQ2Fp5QJq5OaaCXwzRZBCBpfL4SB9hTH6hYVPvJEpKxFZxrNHy6nXus0tcg01TV4lsdKfsq3iqzKY4SHr77DdmYqHAYFTc-KD8wx9wqDOu7pBpk57nL3qFhjN5uIwKo8Z7uMZahcm4G45k0sAg4EONMnclZPwTfjA7UzTPgh8pFTbmoekFELluBam-U3T7rZ1pHPU5g0NXkfPB24kD8jj8pd9d69x-e7n3fE73fgg8tRAZVrnEjLVex0VsXnf12mHRJ_oUcs2UtkXaZmPDJuSDmjuISftaTgR_7KE8bOwns91kxGRDEea8GuwMrIPeWpS75XxWmL4klT9d9V1eLnOmBNoydE2ByLxLcDmBhl8ifI6_rjh_g9cuHWSfU4Cwzfpdmx0c1GgWze0wRXVX1cxHW6GuY5npiCafMBktHIAKDEJFFrU43DV783oaoaaIli0_dGuJO3iBorFDNrq9KUJXXefdizx75Lvg66J9uYwr4M4OSeO7UQkLTKzeO08DRS-_I1yUB8syx",
+          "width": 497
+        }
+      ],
+      "place_id": "ChIJE5Hmg1XFw0cR_w9ps821BIo",
+      "plus_code": {
+        "compound_code": "R9GQ+MR Etterbeek",
+        "global_code": "9F26R9GQ+MR"
+      },
+      "rating": 1,
+      "reference": "ChIJE5Hmg1XFw0cR_w9ps821BIo",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 3,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "parc à chiens Bruxelles"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "Av. de Tervueren 1150, 1150 Woluwe-Saint-Pierre, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.82959160000001,
+          "lng": 4.4298647
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.83123927989273,
+            "lng": 4.4311514
+          },
+          "southwest": {
+            "lat": 50.82853962010728,
+            "lng": 4.426004599999999
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Parc de Woluwe",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 3000,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/104839829825068218295\">Alexander Ivanchev</a>"
+          ],
+          "photo_reference": "AciIO2dI5VPuhYMMkFw3KZDRw1UUxTpLZPvxF4grZG0lfUfReR-XsnH5Kh4-3VsGPCnI6-MJSbEfeaiDpKGbsm1Kijp0ftjydjd1gTWrKQzWH1xNEPVeBDz_kyj1vjwfniQ-Np5zw0psys7BIhlXfS6QtSjrNgegwWaykL8H9m9Sd7yF0eLg6WhxHSESVIsh9lWK1rlP4SmEw3FWkWLbsyaQ0WTET3LLwD9R6GNxq_-Z3KPRUoJIqOvudvf21MvV9pTf3jsFRA_cF_TzZrRoFm96GlM5m4Z0d_Ns6FftKO0N-5-rFS2Ic1Mwjl0MLU-0EaFumppTRgahASvF-GU1VFUx9xZHXtyweDa1LpmgsWPr7FhE9RdIDDoObliyIeGQ_rzi9cMQpvu-6PDlC1ScrIjAmQKcvapruA1pyPp4Efqo8AmdLZZ_Kk3UxFTL8al58yp3ulj9EM7C9HQSzXi3pyoHNJyO08PsSsMcwN9iig4l5P73AyMtP3LhST51F82md-8Qrmid5wt2gaHKi_RW7pFJ-YIKBQGLsl7TH1GEBBZWbz9jO6BOpr6Wym5BkFebKjNyMRsAJck3",
+          "width": 4000
+        }
+      ],
+      "place_id": "ChIJCx03ycLbw0cRapaF2OkrYso",
+      "plus_code": {
+        "compound_code": "RCHH+RW Woluwe-Saint-Pierre",
+        "global_code": "9F26RCHH+RW"
+      },
+      "rating": 4.7,
+      "reference": "ChIJCx03ycLbw0cRapaF2OkrYso",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 1935,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "parc à chiens Bruxelles"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "1180 Uccle, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.7993382,
+          "lng": 4.3455898
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.80085082989272,
+            "lng": 4.347285229892722
+          },
+          "southwest": {
+            "lat": 50.79815117010728,
+            "lng": 4.344585570107278
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Parc de Wolvendael",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 2988,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/106801054435251856437\">CJ B</a>"
+          ],
+          "photo_reference": "AciIO2dE57uiYmRjTveyrqcDr1semXUDvZm0XhAFW8cNyXxHxNw9rpyCkd4Hn_lN03ZEuZ5hBcVKM-8dUynqxtcz4x9eEpJU1D441CNvXU25ytr0sXagp8qpOsmLOm6Ev_NPGRLzQsMw3LOLaoLlOvstpR7ug3-gXczBaKPMdMju5vOuknt1JFseA5SV9tSOnem6zAImTKbh2eE-WO5RpdM8wfTycjTqOhE3Q2ZdnwAnvj_x1zo7z-aaQ5lkuysoflN7gwqj9kF4adoflUBLv_VYSKbX5T4C1GEpcw1uPPzOPO7oq624V0Do4ysV8ozoxuUF13i1nKQ2S3abDnvjmdvdWZ4tQp74dvyJqOWDHWSI30poWz8gjsdLHq__BYvJGH_m1YKL8pHsERm3MlkHTfW2G_AvxCadH64OJ6-iREn65RH-BCkFxibWOlSlt2EkTGvHjktZCztvtoAoJjE4MG-EdWeWVyzdwlPKvif5msQL0JAmQFR8N07UgN-D5gTIrmWc4YI1xm9ZqgbqRUXn1kTbqk6_SeC9VYsPRU1Jn3VAG_9si5M0z9RUENg0vc6HflBcd28ehgwDQNPYHA",
+          "width": 5312
+        }
+      ],
+      "place_id": "ChIJdfzgOanFw0cRWbpOnNbB7xg",
+      "plus_code": {
+        "compound_code": "Q8XW+P6 Uccle",
+        "global_code": "9F26Q8XW+P6"
+      },
+      "rating": 4.5,
+      "reference": "ChIJdfzgOanFw0cRWbpOnNbB7xg",
+      "types": [
+        "park",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 2858,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "dog park Brussels"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "1050 Ixelles, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.8217085,
+          "lng": 4.3658581
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.82328617989272,
+            "lng": 4.367322129892722
+          },
+          "southwest": {
+            "lat": 50.82058652010728,
+            "lng": 4.364622470107278
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Parc Buchholtz",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 4032,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/107448807112757134718\">Victoria Duprez</a>"
+          ],
+          "photo_reference": "AciIO2dANiyiq3Am7wj0ZuL1T8CC2tMn-jxGgmTrDk1xZhSjwOxb-K0eYK-W70m72cyd-cO-AMseUwtW4PeNmakQNqIW_wfFtAEFSWT2pd1sSZLGPlC_ENd3SAOmnG_tujXwGeycktzsgU7Dd7Ek7zJSIZJ-UKXYsnu-EIn_EhAOKNG54BxKaI4yo961ZDyps6F4oaOiZCaB3VsHJhI7PaHU9p-iVPk1xr0IvnJFloNM7GPCCUsj_zVH96v5gmNPjNxA6gJ1i97NCJcEA7X_Vhm98qORsYsIOwFDnnmsEpjgjJUKYOnVP0DUaR16d3Koql-UHkYVDN-FbS23i_-ILsbFiMC_Jh1BhuF06xfJO_OnH0wTnwZDMdphcCLybm3wEtQ7lMKUimnXmnhZ7op6mKxwOLFNW1z0rxllFrSdJP9L3OuDXfu6qEAYR4NQClq1qLl8NxLETKaVDTh5VBv-ounqByxTlhKYLz3aGA-x-CQaU5kQ4tFDeaIt3SXMAL9UIFIr3LaKqe4QQCdpdcN2JwqjVxaTRydBfADueTRvZsEynBHM6p-TuIBN0uWpVPd3pT98gfHmehm_",
+          "width": 3024
+        }
+      ],
+      "place_id": "ChIJIfUCjgrFw0cRXYPcTNK-kxc",
+      "plus_code": {
+        "compound_code": "R9C8+M8 Ixelles",
+        "global_code": "9F26R9C8+M8"
+      },
+      "rating": 3.9,
+      "reference": "ChIJIfUCjgrFw0cRXYPcTNK-kxc",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 33,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "dog park Brussels"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "Bd Edmond Machtens 43, 1080 Molenbeek-Saint-Jean, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.85216680000001,
+          "lng": 4.3178203
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.85361027989272,
+            "lng": 4.319120029892722
+          },
+          "southwest": {
+            "lat": 50.85091062010728,
+            "lng": 4.316420370107278
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Zone Chiens Marie-José Hondenlosloopweide",
+      "photos": [
+        {
+          "height": 3024,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/100622643139978578433\">Mav “Maveric” eric</a>"
+          ],
+          "photo_reference": "AciIO2deADdD3Y0RRhxFBl4Mw0ban8DjypUsS1R4RucaOsqV81JYgPRcWD0YaRXfVxULs7-lx9vL6k8NrqpNVwDWdP8nYnmtzMyJtpl66iZAaeqnJyny-iIclbmjWXFDxpnFEcUhrO8-xag4OnUboA0en0X-yZAOeFvWtm1n1h1z9FTBGHuXySzRWR3qKTNuB4_Y8_IXImX7H1ebUCJ4eaU2Xoh933-a0qQSsSRATGAejolZD9fzI7z_T7VQyfDqxsRRlFaEE1UyHemlRHgKKPO3DboVBe3D2YM8i6rVj0E1gqLqxZIWWydHGnfBxZlIAzXWg2_VUdbLREMKjMaRTU-AlApsbZ1pAWyB7v83NZVEYAEe8sYIDQGNsRRuy1FYMBYQSC9hd9U9r3BEjmK3F4QliTZhHtorO3jNCX8IJ7kLWHodJ9dsDhcxY-ukbExbCGmZXkH5G3Qn9YU7crFnwfwxoWcmUfRnun4hPn_6liAn2aHfU_YgCRmeQMBIn7S_ArkLfjyJ_loa8FBYT12qzex4_rm6ju8060rJ1pVApWbHsFTfARq16dQ7PLGOIzuRUdK7z55CFIKD4deYZA",
+          "width": 4032
+        }
+      ],
+      "place_id": "ChIJP6G4GwLDw0cR-3zdi9F1_Gw",
+      "plus_code": {
+        "compound_code": "V829+V4 Molenbeek-Saint-Jean",
+        "global_code": "9F26V829+V4"
+      },
+      "rating": 4.3,
+      "reference": "ChIJP6G4GwLDw0cR-3zdi9F1_Gw",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 4,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "dog park Brussels"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "Chau. de Waterloo 792, 1180 Uccle, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.8087284,
+          "lng": 4.3703587
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.81005767989272,
+            "lng": 4.371602829892721
+          },
+          "southwest": {
+            "lat": 50.80735802010727,
+            "lng": 4.368903170107277
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "name": "Urban Dogs",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 1600,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/110908290094422275107\">Mónica A Lombana R.</a>"
+          ],
+          "photo_reference": "AciIO2fN0tzQsiDwS36RfWyWkn530xUzLFtk2EFTb1-ZPYL3Z1DU3j5dJeqfLpLJwkITZAAnDmlKiVOARfQeB9HeFSCyq3vRv9LCL8P4rqDm9E7h3BY-mp6ZjAJgPAbdOdZvr06xeej0Kcrm5OV4KtoSKZKvu_vr7kNQcqQ0fMxVNVy5NhwBxJtYYS3t1nfjorIXfmHP8SgY-gisYCW3ex6Lg9NvV5mWjPXunu4lQcuM0p2MWUkH9eE0E0wl2h6jLKES8Pb17LSX1okzZfHLV0z_-Sh1sm3kRHisFjHrCqnA8YcOQv0N-dcKUo9IVSE1pksdU2Bgx_3s_lRYlO2KULGGoVm8gxKdmmdQE_iEuIDWVA6zwYUf_VaQAYnon0fvS44YY860Ew1G8QaLlOa34bpSUuoIUjupI7AcxanVodifiy6lBQK33bQrllBlHouqn9UuHfyROArmfC_2H5fBEsk8X5AB4o_KUd0TjSe4ZEwzANF_GNrFI1Kr6aJxOzxVaNn6WQ6YIppNzsywHs6RCVRPBLMo5MN4czTnO9JPEB1IXaolpXiaFtM7VHAQdcrQqPsf9SzBsdzQdFeR3g",
+          "width": 1200
+        }
+      ],
+      "place_id": "ChIJqTbR8sPFw0cR18HILYAL2po",
+      "plus_code": {
+        "compound_code": "R95C+F4 Uccle",
+        "global_code": "9F26R95C+F4"
+      },
+      "rating": 4.9,
+      "reference": "ChIJqTbR8sPFw0cR18HILYAL2po",
+      "types": [
+        "pet_store",
+        "point_of_interest",
+        "store",
+        "health",
+        "establishment"
+      ],
+      "user_ratings_total": 131,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "dog park Brussels"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "1190 Forest, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.8230491,
+          "lng": 4.338338100000001
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.82483202989272,
+            "lng": 4.339888529892722
+          },
+          "southwest": {
+            "lat": 50.82213237010728,
+            "lng": 4.337188870107278
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Parc de Forest",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 3264,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/114328495814773846921\">Alessi Elio</a>"
+          ],
+          "photo_reference": "AciIO2c6C2e-PnPO4di8E2fFhsJuycE3f8cSc42vTP-ENy7zNhCemVxTUHuaDqe2E6fr8GQubRTVo1SbZKuFQ3Mln3u0yCavSrl-7bPBlRLgygaAA1Qb2P4NeX_kQl9X9BlEAo49s6-2htvjFhPN5yDmPjNeTpmPGz3e9n_xJ7PKSypIVpYiBg7MaQf1oq8xGt2ph1RHFVKx_A1TY4SF2Jy53nb0m-vcvIsdpYtippUtcFhXXD3EAx8B1y3T-ueJshfZS0AQHVeHEis8qE1oFzD66UPh1WAlbDqCYBuhHVKmWKU5_k0NNCnEsfl1Ok2j3JBJ8J8bBcRf59MfniViixaTUbTsgkq-mQWp9mhBmxjTvlbnIgVfQwtJfdJlMrQD8bir8zjGecWoOmimuTtxROQAhJv53ubGwzJrWfwp__ByPwKlnDg70tgZyEvEQXfvE0k6Dk7DqSNlD4b1y8bLPYXzsB9PXfqbckE_9-euJDThLKw4ouvKfBtF3NNPbYJjedSewIfPI78gBX0adkuvkuQ66KPkL0cEyjN3dEXy5lwrh6huuKzVHRHtQIixbnwHi7Yz8-tw2bcB",
+          "width": 2448
+        }
+      ],
+      "place_id": "ChIJG7TZikPEw0cReLqY0TgNGGs",
+      "plus_code": {
+        "compound_code": "R8FQ+68 Forest",
+        "global_code": "9F26R8FQ+68"
+      },
+      "rating": 4.3,
+      "reference": "ChIJG7TZikPEw0cReLqY0TgNGGs",
+      "types": [
+        "park",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 4014,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "dog park Brussels"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "1082 Berchem-Sainte-Agathe, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.8666481,
+          "lng": 4.30516
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.86805462989273,
+            "lng": 4.306582829892722
+          },
+          "southwest": {
+            "lat": 50.86535497010728,
+            "lng": 4.303883170107278
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Espace chiens",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 1440,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/109548283923038824166\">van den Borne Evelyne</a>"
+          ],
+          "photo_reference": "AciIO2cCnf5kAZswG4GEpFfIUttpmqBL8Hiw1lN32UHTAvXHdfGMOtBlAhg_IQep205X4f_0g66uwqV1WASAodbJns9GF_InKZyROCXjkfPeV0eRrclUJLy29qxUX94aq4ll8Fx5MsEo9LxOiufkJU6HP1pfwYSv4NmBU1ieVvknLcABB4CIaDaM_Ug7L1MAaMWpxhWUrX_a4V_ilF4r8iBYYrwOA_M8moFd3iJcbNAstbrNFJ0Kaqi7LK3OOGLOjlZ5hkGEgEj7KCY4rIU8Hy5Lwnju3Wmu2KOzFcjhvuEcL4JuBxOdn5xje4073SlvOscKcwDsU430qGCj8r8-4VaOLpiOMp9_sYVn7iyW_P344HTjpdvC-r_o83Q4t0A3QujG2sBp9q49K0lWX_iy6E6XgYH0kZBY5hMCPDJwDlBC8ejgkzB1LTj53d14Bjlcs9HdM7cnQLP4huCxqsljR7I5v-2kHsIqQGuwqWX5MRvtSzX7rSQ9JMZmP9cKEZWO1BwJ2pJsVr-IMyffn2dyx-aERfUA3zNk7pk6m1MWWk8_sajcp33XRr7dyH0vvjDsh9odvM7cBQ",
+          "width": 2560
+        }
+      ],
+      "place_id": "ChIJGecbIFzBw0cR5g7aMHmSJrM",
+      "plus_code": {
+        "compound_code": "V884+M3 Berchem-Sainte-Agathe",
+        "global_code": "9F26V884+M3"
+      },
+      "rating": 3.5,
+      "reference": "ChIJGecbIFzBw0cR5g7aMHmSJrM",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 2,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "espace chien Bruxelles"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "Av. de l'Hippodrome 90, 1050 Ixelles, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.8215897,
+          "lng": 4.3761474
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.82291407989272,
+            "lng": 4.377404679892722
+          },
+          "southwest": {
+            "lat": 50.82021442010728,
+            "lng": 4.374705020107278
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+      "icon_background_color": "#4B96F3",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+      "name": "Canine",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 1024,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/105901911394652232310\">A Google User</a>"
+          ],
+          "photo_reference": "AciIO2cGUYz28z4gM46OHXZGIrszVbNdgCHJJ6a1uzsAy3CYeBXCuO7ZGjS6xiEOuVoXKIqR2YYAZd7-E_LJSdveQfpr06ctDhZY-r4LzcSbekOyl51Ncrf-XdN7OSzvRvQ6ijhPGlUF9tB7j3kWQcGbbzmDDmhiV7t2_MLuNiEjtwZbm6YUUO1NZQmq5Am_XCbnI12V1rPMsU-x2Y2MPXwb2dwSC9q-aKNWMRoL6nVG94_lBrU39toP--42NjBdAhLLQmeKjJux-TfdSjq3qb3BCPqewrm2N9sM3HKCgrHlDVrkjfjUvME",
+          "width": 1536
+        }
+      ],
+      "place_id": "ChIJ4WSMsvrFw0cRUEcAZBHnS_A",
+      "plus_code": {
+        "compound_code": "R9CG+JF Ixelles",
+        "global_code": "9F26R9CG+JF"
+      },
+      "rating": 5,
+      "reference": "ChIJ4WSMsvrFw0cRUEcAZBHnS_A",
+      "types": [
+        "pet_store",
+        "point_of_interest",
+        "store",
+        "establishment"
+      ],
+      "user_ratings_total": 54,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "aire de détente canine Bruxelles"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "Zittekestraat, 3080 Tervuren, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.8250849,
+          "lng": 4.5378139
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.82613357989273,
+            "lng": 4.539525229892723
+          },
+          "southwest": {
+            "lat": 50.82343392010728,
+            "lng": 4.536825570107279
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Parc à chien",
+      "opening_hours": {},
+      "photos": [
+        {
+          "height": 3024,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/113953258901918613736\">Jad Badran</a>"
+          ],
+          "photo_reference": "AciIO2dDxfZz5nifGlXDelYNcRUGk44czbFwzhZiEm3pwp7VjYzHquiPeAZ6d3L_zpZgTHy14qypr2_GZZBp-zRkza-G16JrTMSsSOSJgkErqfZF4xm7UMxZZXvrMpE6r71cFb9o6ELWJUgVCnPKKh85-r42Nr5v2b8v45ab46O5ooMai5y7Wfh5IzsS8rQytcLRIjvFMp79egVyGQA_ONihgf3wjm5eHPjyQC7sT1N-KdWd8aF21zEgJJtGCfG4z7_n2mTEu1nEYMHAVabjvW61WANRDlu9iWHMbzpVdYe3vqbRUMveRn3qUdKAfOz-nUYQ4cDA6gr7snLBFI4LufXdQBTRK5KBtp1zFE46QxW_aputJjY__Mh3FMvFiu7sd2RlRuQKAFSVISGsFM2CWpu6jxMP0RjE4lzG6qP-WyH1LTQ7xhWiMqRbzUYuEknu-I6BrROBPBt7TjYYKGyCDqnmHOQRoAKxVLGAtBWlkU-Eqhe0w80fdeerVUQcWMiQytVqZ-0zeEUwQoduFxwc4d92LtLxYbANAlSDWaxHD_eos0sXRYQOAdRJWX28AC_M9zlE2C-8ZF53DIh8wg",
+          "width": 4032
+        }
+      ],
+      "place_id": "ChIJ8Z17DpHZw0cRjuFUV8SLYOk",
+      "plus_code": {
+        "compound_code": "RGGQ+24 Tervuren",
+        "global_code": "9F26RGGQ+24"
+      },
+      "rating": 5,
+      "reference": "ChIJ8Z17DpHZw0cRjuFUV8SLYOk",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 3,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "aire de détente canine Bruxelles"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "Bd du Souverain, 1160 Auderghem, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.8095276,
+          "lng": 4.429058800000001
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.81090732989271,
+            "lng": 4.429759750000001
+          },
+          "southwest": {
+            "lat": 50.80820767010727,
+            "lng": 4.42704315
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Parc Seny",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 4000,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/103596477019230566550\">Mohammad Saifush Sakur</a>"
+          ],
+          "photo_reference": "AciIO2dwGNGN6xMpnrVSjJCHSi8D-YTX_e9Q_Q3th2Hq_qr0dSLO9iwTiBB8ITn5FqRbxIbP6BnwuIp9nkn1SgPRAtn1zsHNRL3hNgvqJvebhmCvJOXfepIYwC-rwLiS8dPrchJms0otu9YO45BSYwv7LgNl5l3BgELoNr9ju1Eyb9e-FmAJe-tDTvCOYflE6_1YjPzEUy7gjDD5z-x8sAv-bbpiWN_M-Pj3JJZPUR2Cl0JVpDJF8-Ny1Dj1xLGA01whx6dpTYnNOIhNIpqTyMPbWTu18rUO22O9gPxogayNIzAJ2UvC5WAAZIB1eO-oFZz9p36T18-jV7JjZKtwzAe2XfdRxI4ev3HhY53SCf02NPtfdpI35y0HzNlx759W59THbMX1qHCSqey01rP3BdfXeZCWAdcbh4-TXOqAfB9LBpcUfpW_hVc7wG1PLQHqLzPoWlFtGE5vh4leHdAehkxghdegdfZH4uiZICYEvpZk4P1mqPUpTeTeuqe63W5xqukg1_TapaXcxE5z_JzpLhT9es3U4skHTWLejYy5q9oYxe0AfPUZMU4cBoqkqzURaD5_eF7AdJr1-alnSQ",
+          "width": 1800
+        }
+      ],
+      "place_id": "ChIJwWQfND3bw0cRQ-cuhsxbY5U",
+      "plus_code": {
+        "compound_code": "RC5H+RJ Auderghem",
+        "global_code": "9F26RC5H+RJ"
+      },
+      "rating": 4.5,
+      "reference": "ChIJwWQfND3bw0cRQ-cuhsxbY5U",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 256,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "aire de détente canine Bruxelles"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "1190 Forest, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.8161858,
+          "lng": 4.3302502
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.81710027989273,
+            "lng": 4.331738879892722
+          },
+          "southwest": {
+            "lat": 50.81440062010729,
+            "lng": 4.329039220107278
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Parc Duden",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 6000,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/107308517944547166655\">Adam Bosak</a>"
+          ],
+          "photo_reference": "AciIO2fUzejUFn93adwX_ZhywbhaFw8x7MzH0IIkQPTHX_dGxOlhFKGBhwA-wxNDDynFCikKNXY6MC0CgfS_vdPyktItbKcje-65W3C9gnp737uDvxgyCZ_CkXTQl5uXZg01_dCSujA7dKIUt9CL0pDM9XE9pOWmIEtUfbHDMRXZm9qIwW3rg1_0LqvUEKXHkz8vwlZBuyyjhkL2iQqIRpGoHQxQoGqiI3AcvXpx6AvTYwsDNhWN7oOgPe6-eRxkSwsFI7K8CYbJCA6gW1XpdQgCWqntOl6HIgyQydPExx93m6L_dlULLiwAhrwNilhS4arulUJi82I-mUaDeGiPxdNdBgI9I7Nje9xf0ecy2Wilz39krZEBC0xcHe-6LRBuZTYJ3RqzMWkT_kGfCHWlkufxbAOyJYxuwkl8xDhidOFBR8eXvO9QKbHmEh05U4jv3pMyoqOD8BIJ1ckGPvI9XFCTOxp90C3N3n5crgpIGzVG90uB9rUAv-3Xdk3zs9lNNBwZ6eCVJIDK3RMNb42txYckz5YMdUZa72eZWFHdnaaUD50gIm8lgvld2nv157Av0iyop3ec_zgoV76bcA",
+          "width": 8000
+        }
+      ],
+      "place_id": "ChIJM0TFckjEw0cRIiLM60Z5d18",
+      "plus_code": {
+        "compound_code": "R88J+F4 Forest",
+        "global_code": "9F26R88J+F4"
+      },
+      "rating": 4.4,
+      "reference": "ChIJM0TFckjEw0cRIiLM60Z5d18",
+      "types": [
+        "park",
+        "tourist_attraction",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 3576,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "aire de détente canine Bruxelles"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "Rue St Vincent 59, 1140 Evere, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.8792456,
+          "lng": 4.405847800000001
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.88054877989273,
+            "lng": 4.407142979892722
+          },
+          "southwest": {
+            "lat": 50.87784912010729,
+            "lng": 4.404443320107278
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+      "name": "Dog park",
+      "place_id": "ChIJTX3itgfDw0cR4F0u8Dt3fIU",
+      "plus_code": {
+        "compound_code": "VCH4+M8 Evere",
+        "global_code": "9F26VCH4+M8"
+      },
+      "reference": "ChIJTX3itgfDw0cR4F0u8Dt3fIU",
+      "types": [
+        "park",
+        "point_of_interest",
+        "establishment"
+      ],
+      "dogPlaceType": "dog_park",
+      "searchQuery": "aire de détente canine Bruxelles"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "Av. de la Chasse 31, 1040 Etterbeek, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.83130939999999,
+          "lng": 4.390922900000001
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.83267657989271,
+            "lng": 4.392249129892722
+          },
+          "southwest": {
+            "lat": 50.82997692010727,
+            "lng": 4.389549470107278
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+      "icon_background_color": "#4B96F3",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+      "name": "Une Vie de Chien",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 1080,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/107986857857108530240\">Maribel Franco</a>"
+          ],
+          "photo_reference": "AciIO2cu7Yu-dtK7a_2HqmYH7e46V-k4ZpcgQlME5EARHKObCcuCjuwW3ZQQd6P2ohFOcF6-Jtg4qNWHmr05ysQJQHgrF1btZNd1HIdsLIpOEA41nKwhPthpEpW_xZI79uiunmVACkceA6siaXs4o6dUqf-zTa9PTXA7jBV4GDU6xOz41nXTeg2VvgIoMJey8D45d0vx3YLXktbSSzzVVu0EtmnFgykJQWaD8eF_eAT5cxtJ6ThFTDwSqgA7gq8_t0AkOwMv-3-pK5dkgcnD2l61zpa2rFT6eaPaixf23loFl7lNZ48jpDwPERKT-Jn3geKhj_lSl2rihosnKE9zx-LcLSp-LSJjH2bvUi__sU_BKL_-bdyfoCE3M3ISbU9055p0pLvla91wf2olIe0jpd6oSusy19jyMJbiyqIWRUVpRtXuosjgEFIs_5BS4819OohV1faaVQbFdAB3aD6BFsCieGXiXHCRZXrtdMA10SbahgnQA4-F2_PqTDFM2clNLXUW3gEao0Q-LwDw4VZjmfsI11moi7H3FBj_2J3TCf0rBa1Hxo1c5h6FJtC_5kgtpA9UesWyJTGAElWrBg",
+          "width": 1080
+        }
+      ],
+      "place_id": "ChIJtVflLrrEw0cREcy_nJOo-gM",
+      "plus_code": {
+        "compound_code": "R9JR+G9 Etterbeek",
+        "global_code": "9F26R9JR+G9"
+      },
+      "rating": 4.4,
+      "reference": "ChIJtVflLrrEw0cREcy_nJOo-gM",
+      "types": [
+        "pet_store",
+        "point_of_interest",
+        "store",
+        "establishment"
+      ],
+      "user_ratings_total": 315,
+      "dogPlaceType": "dog_park",
+      "searchQuery": "zone sans laisse chien Bruxelles"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "1080 Molenbeek-Saint-Jean, Belgique",
+      "geometry": {
+        "location": {
+          "lat": 50.8510911,
+          "lng": 4.3140269
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 50.85230477989271,
+            "lng": 4.315337129892721
+          },
+          "southwest": {
+            "lat": 50.84960512010727,
+            "lng": 4.312637470107277
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#4DB546",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "name": "Espace Chiens sans laisse - Park Albert Molenbeek",
+      "place_id": "ChIJje34LQDDw0cRJwQt60G1Us8",
+      "plus_code": {
+        "compound_code": "V827+CJ Molenbeek-Saint-Jean",
+        "global_code": "9F26V827+CJ"
+      },
+      "reference": "ChIJje34LQDDw0cRJwQt60G1Us8",
+      "types": [
+        "zoo",
+        "point_of_interest",
+        "establishment"
+      ],
+      "dogPlaceType": "dog_park",
+      "searchQuery": "zone sans laisse chien Bruxelles"
+    }
+  ]
+}

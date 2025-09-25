@@ -4,18 +4,28 @@ name: 🎛️ Manual Data Collection - Dog Places Brussels
 on:
   # UNIQUEMENT MANUEL - pas d'exécution automatique
   workflow_dispatch:
-    description: 'Lancement manuel du workflow de collecte de données'
+    description: 'Recherche complète des lieux pour chiens via Google Places API'
     inputs:
-      workflow_type:
-        description: 'Type de workflow à exécuter'
+      search_type:
+        description: 'Type de lieux à rechercher'
         required: true
-        default: 'both'
+        default: 'all_dog_places'
         type: choice
         options:
-        - 'addresses'     # Gratuit (OpenAddresses)
-        - 'places'        # Payant (Google API)
-        - 'both'          # Les deux séquentiellement
-        - 'legacy'        # Anciens scripts
+        - 'all_dog_places'    # Tous les lieux pour chiens
+        - 'dog_parks_only'    # Uniquement parcs canins
+        - 'parks_all'         # Tous les parcs (canins + normaux)
+        - 'veterinary_only'   # Uniquement vétérinaires
+        - 'restaurants_only'  # Uniquement restaurants dog-friendly
+      search_radius:
+        description: 'Rayon de recherche (km)'
+        required: false
+        default: '20'
+        type: choice
+        options:
+        - '10'   # Zone restreinte
+        - '20'   # Zone élargie (recommandé)
+        - '30'   # Zone très élargie
       dry_run:
         description: 'Mode test (pas de sauvegarde réelle)'
         required: false
@@ -38,7 +48,7 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Execute Data Collection (Manual Choice)
+    - name: Search Dog Places via Google Places API
       env:
         NODE_ENV: production
         GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
@@ -48,46 +58,40 @@ jobs:
         FIREBASE_CLIENT_EMAIL: ${{ secrets.FIREBASE_CLIENT_EMAIL }}
         FIREBASE_CLIENT_ID: ${{ secrets.FIREBASE_CLIENT_ID }}
         FIREBASE_CLIENT_X509_CERT_URL: ${{ secrets.FIREBASE_CLIENT_X509_CERT_URL }}
-        WORKFLOW_TYPE: ${{ github.event.inputs.workflow_type }}
+        SEARCH_TYPE: ${{ github.event.inputs.search_type }}
+        SEARCH_RADIUS: ${{ github.event.inputs.search_radius }}
         DRY_RUN: ${{ github.event.inputs.dry_run }}
       run: |
-        echo "🎯 LANCEMENT MANUEL DU WORKFLOW"
-        echo "Type sélectionné: $WORKFLOW_TYPE"
+        echo "🐕 RECHERCHE LIEUX POUR CHIENS - GOOGLE PLACES API"
+        echo "================================================="
+        echo "Type de recherche: $SEARCH_TYPE"
+        echo "Rayon: ${SEARCH_RADIUS}km"
         echo "Mode test: $DRY_RUN"
+        echo ""
 
-        case "$WORKFLOW_TYPE" in
-          "addresses")
-            echo "🏠 Lancement workflow ADDRESSES (Gratuit)"
-            npm run import:addresses
-            ;;
-          "places")
-            echo "🐕 Lancement workflow PLACES (Payant Google API)"
-            if [ -z "$GOOGLE_PLACES_API_KEY" ]; then
-              echo "❌ GOOGLE_PLACES_API_KEY manquante pour le workflow places"
-              exit 1
-            fi
-            npm run import:places
-            ;;
-          "both")
-            echo "🚀 Lancement workflow COMPLET (Addresses + Places)"
-            echo "1/2 🏠 Addresses (Gratuit)..."
-            npm run import:addresses
-            sleep 30
-            echo "2/2 🐕 Places (Payant)..."
-            if [ -n "$GOOGLE_PLACES_API_KEY" ]; then
-              npm run import:places
-            else
-              echo "⚠️ GOOGLE_PLACES_API_KEY manquante, ignorer places"
-            fi
-            ;;
-          "legacy")
-            echo "📚 Lancement scripts LEGACY (compatibilité)"
-            node scripts/scheduleManager.js execute
-            ;;
-          *)
-            echo "❌ Type de workflow invalide: $WORKFLOW_TYPE"
-            exit 1
-            ;;
-        esac
+        # Vérification de la clé API Google Places
+        if [ -z "$GOOGLE_PLACES_API_KEY" ]; then
+          echo "❌ GOOGLE_PLACES_API_KEY manquante"
+          echo "💡 Ajoutez votre clé Google Places API dans les secrets GitHub"
+          exit 1
+        fi
 
-        echo "✅ Workflow terminé!"
+        # Lancement du script de recherche amélioré
+        echo "🔍 Lancement de la recherche Google Places..."
+        node scripts/places/fetchEnhancedDogPlaces.js "$SEARCH_TYPE" "$SEARCH_RADIUS" "$DRY_RUN"
+
+        if [ "$DRY_RUN" = "false" ]; then
+          echo ""
+          echo "💾 Import des données en Firestore..."
+          node scripts/places/importPlaces.js
+
+          echo ""
+          echo "🔍 Validation des données..."
+          node scripts/places/validatePlaces.js
+        else
+          echo ""
+          echo "🧪 Mode test activé - pas d'import en base"
+        fi
+
+        echo ""
+        echo "✅ Recherche terminée!"
