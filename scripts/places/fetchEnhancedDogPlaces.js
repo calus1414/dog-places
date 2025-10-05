@@ -70,11 +70,52 @@ class EnhancedDogPlacesSearcher {
             // Parcs généraux (où chiens acceptés)
             parks_general: {
                 queries: [
+                    // Recherches générales par type
+                    'park Brussels',
+                    'parc Bruxelles',
                     'parc public Bruxelles',
                     'parc urbain Bruxelles',
                     'jardin public Bruxelles',
+                    'jardin Bruxelles',
                     'espace vert Bruxelles',
-                    'square Bruxelles'
+                    'square Bruxelles',
+                    'place publique Bruxelles',
+
+                    // Recherches par commune
+                    'parc Ixelles',
+                    'parc Uccle',
+                    'parc Schaerbeek',
+                    'parc Etterbeek',
+                    'parc Saint-Gilles',
+                    'parc Forest',
+                    'parc Anderlecht',
+                    'parc Molenbeek',
+                    'parc Jette',
+                    'parc Ganshoren',
+                    'parc Berchem-Sainte-Agathe',
+                    'parc Koekelberg',
+                    'parc Laeken',
+                    'parc Woluwe-Saint-Lambert',
+                    'parc Woluwe-Saint-Pierre',
+                    'parc Auderghem',
+                    'parc Watermael-Boitsfort',
+                    'parc Evere',
+                    'parc Bruxelles-ville',
+
+                    // Parcs connus spécifiques
+                    'Parc du Cinquantenaire',
+                    'Parc de Bruxelles',
+                    'Parc Josaphat',
+                    'Parc Léopold',
+                    'Parc de Wolvendael',
+                    'Parc de Laeken',
+                    'Parc de Forest',
+                    'Parc Duden',
+                    'Parc Malou',
+                    'Parc de Woluwe',
+                    'Bois de la Cambre',
+                    'Forêt de Soignes Bruxelles',
+                    'Parc Parmentier'
                 ],
                 type: 'park',
                 placeType: 'general_park'
@@ -178,14 +219,18 @@ class EnhancedDogPlacesSearcher {
                 console.log(`     🔎 "${query}"`);
                 const places = await this.searchPlaces(query, radiusMeters);
 
-                // Ajouter le type de lieu
-                const typedPlaces = places.map(place => ({
-                    ...place,
-                    dogPlaceType: definition.placeType,
-                    searchQuery: query
-                }));
+                // Analyser et typer les lieux selon leur contenu
+                const analyzedPlaces = places.map(place => {
+                    const analyzedType = this.analyzePlaceType(place, definition.placeType, query);
+                    return {
+                        ...place,
+                        dogPlaceType: analyzedType,
+                        searchQuery: query,
+                        originalPlaceType: definition.placeType
+                    };
+                });
 
-                allPlaces.push(...typedPlaces);
+                allPlaces.push(...analyzedPlaces);
 
                 // Pause pour éviter les limites de taux
                 await this.delay(500);
@@ -196,6 +241,47 @@ class EnhancedDogPlacesSearcher {
         }
 
         return allPlaces;
+    }
+
+    /**
+     * 🧠 Analyse intelligente du type de lieu
+     */
+    analyzePlaceType(place, defaultType, searchQuery) {
+        const name = (place.name || '').toLowerCase();
+        const address = (place.formatted_address || '').toLowerCase();
+        const query = searchQuery.toLowerCase();
+
+        // Mots-clés pour identifier les parcs canins
+        const dogParkKeywords = [
+            'parc canin', 'parc à chien', 'dog park', 'espace chien',
+            'aire de détente canine', 'zone sans laisse', 'parc à chiens',
+            'hondenpark', 'hondenspeelplaats', 'chien sans laisse',
+            'aire canine', 'enclos chien', 'zone chien'
+        ];
+
+        // Mots-clés pour identifier les parcs normaux (mais pas canins)
+        const generalParkKeywords = [
+            'parc', 'park', 'jardin', 'garden', 'square', 'espace vert',
+            'bois', 'forêt', 'cinquantenaire', 'léopold', 'josaphat',
+            'wolvendael', 'laeken', 'forest', 'duden', 'malou', 'woluwe'
+        ];
+
+        // Vérifier s'il s'agit d'un parc canin spécifique
+        const isDogPark = dogParkKeywords.some(keyword =>
+            name.includes(keyword) || address.includes(keyword) || query.includes(keyword)
+        );
+
+        if (isDogPark) {
+            return 'dog_park';
+        }
+
+        // Si c'était recherché comme parc général et contient des mots-clés de parc
+        if (defaultType === 'general_park' && generalParkKeywords.some(keyword => name.includes(keyword))) {
+            return 'general_park';
+        }
+
+        // Retourner le type par défaut
+        return defaultType;
     }
 
     async searchPlaces(query, radius) {
@@ -216,7 +302,22 @@ class EnhancedDogPlacesSearcher {
             } else if (response.data.status === 'ZERO_RESULTS') {
                 return [];
             } else {
-                throw new Error(`API Error: ${response.data.status}`);
+                // Gestion d'erreurs détaillée
+                let errorMsg = `API Error: ${response.data.status}`;
+                if (response.data.error_message) {
+                    errorMsg += ` - ${response.data.error_message}`;
+                }
+
+                // Messages d'erreur spécifiques
+                if (response.data.status === 'REQUEST_DENIED') {
+                    errorMsg += '\n💡 Vérifiez votre clé API Google Places et ses permissions';
+                } else if (response.data.status === 'OVER_QUERY_LIMIT') {
+                    errorMsg += '\n💡 Quota API dépassé - vérifiez votre billing Google Cloud';
+                } else if (response.data.status === 'INVALID_REQUEST') {
+                    errorMsg += '\n💡 Paramètres de requête invalides';
+                }
+
+                throw new Error(errorMsg);
             }
         } catch (error) {
             if (error.response) {
